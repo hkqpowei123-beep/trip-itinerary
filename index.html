@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>丹麥 & 冰島 15天家族冒險之旅</title>
+    <title>丹麥 & 冰島 15天家族夢幻之旅</title>
     <style>
         :root {
             --dk-red: #C8102E;
@@ -12,38 +12,91 @@
             --is-blue: #003897;
             --is-blue-light: #EEF4FF;
             --is-blue-dark: #001F52;
-            --card-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
             --radius-lg: 16px;
             --radius-sm: 10px;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5;
-            color: #2C3E50;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1A202C;
             background-color: #F4F6F9;
             margin: 0;
             padding: 12px;
             -webkit-font-smoothing: antialiased;
+            font-size: 18px; /* Larger base size for elders */
         }
 
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        /* Hero Banner with Cutest Glass Lodge & Nyhavn Collage Effect */
+        /* Top Bar with Side Menu Toggle & Edit Controls */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 8px;
+        }
+
+        .btn-menu {
+            background: #2D3748;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .edit-controls {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn-edit {
+            background: #3182CE;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-save {
+            background: #38A169;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+            cursor: pointer;
+            display: none; /* Hidden until edit clicked */
+        }
+
+        /* Hero Banner */
         .hero-banner {
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
             color: white;
-            padding: 30px 20px 25px 20px;
+            padding: 28px 18px 22px 18px;
             text-align: center;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, rgba(200, 16, 46, 0.85) 0%, rgba(0, 56, 151, 0.85) 100%),
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.88) 0%, rgba(0, 56, 151, 0.88) 100%),
                         url('https://images.unsplash.com/photo-1504829857797-ddff29c27927?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         }
 
         .hero-badge {
@@ -53,114 +106,79 @@
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.85em;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            font-weight: 700;
+            margin-bottom: 6px;
         }
 
         .hero-banner h1 {
             margin: 4px 0 6px 0;
-            font-size: 1.75em;
+            font-size: 1.85em;
             font-weight: 800;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-banner p {
             margin: 0;
-            font-size: 0.95em;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        /* Action Toolbar */
-        .toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            gap: 10px;
-        }
-
-        .notice-pill {
-            background-color: #FFF9E6;
-            border: 1px solid #FFE58F;
-            color: #8C6B00;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
+            font-size: 1.05em;
             font-weight: 600;
-            flex-grow: 1;
-        }
-
-        .btn-save {
-            background: #27AE60;
-            color: white;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85em;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
-            white-space: nowrap;
         }
 
         .section-title {
-            font-size: 1.25em;
+            font-size: 1.35em;
             font-weight: 800;
-            margin: 24px 0 12px 0;
+            margin: 26px 0 14px 0;
             display: flex;
             align-items: center;
             gap: 8px;
             padding-bottom: 6px;
-            border-bottom: 2.5px solid;
+            border-bottom: 3px solid;
         }
 
         .title-dk { color: var(--dk-red); border-color: var(--dk-red); }
         .title-is { color: var(--is-blue); border-color: var(--is-blue); }
 
-        /* Card Styles optimized for mobile */
+        /* Card Styles */
         .day-card {
             background: white;
             border-radius: var(--radius-lg);
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
-        .day-card.denmark { border-top: 5px solid var(--dk-red); }
-        .day-card.iceland { border-top: 5px solid var(--is-blue); }
+        .day-card.denmark { border-top: 6px solid var(--dk-red); }
+        .day-card.iceland { border-top: 6px solid var(--is-blue); }
 
         .day-header {
-            padding: 12px 16px;
-            font-weight: 700;
+            padding: 14px 16px;
+            font-weight: 800;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.95em;
+            font-size: 1.05em;
         }
 
         .denmark .day-header { background: var(--dk-red-light); color: var(--dk-red-dark); }
         .iceland .day-header { background: var(--is-blue-light); color: var(--is-blue-dark); }
 
-        .day-body { padding: 14px 16px; }
+        .day-body { padding: 16px; }
 
         .timeline { list-style: none; padding: 0; margin: 0; }
 
         .timeline li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            font-size: 0.92em;
+            padding-left: 22px;
+            margin-bottom: 14px;
+            font-size: 1em; /* Larger text for elders */
+            line-height: 1.6;
         }
 
         .timeline li::before {
             content: "•";
             position: absolute;
             left: 2px;
-            font-size: 1.3em;
+            font-size: 1.4em;
             top: -2px;
         }
 
@@ -168,32 +186,47 @@
         .iceland .timeline li::before { color: var(--is-blue); }
 
         .time-tag {
-            font-weight: 700;
-            color: #4A5568;
+            font-weight: 800;
+            color: #2D3748;
             margin-right: 4px;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            background: #EDF2F7;
+            color: #2B6CB0;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.82em;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 6px;
+            border: 1px solid #CBD5E0;
         }
 
         .tag {
             display: inline-block;
-            padding: 2px 7px;
+            padding: 2px 8px;
             border-radius: 6px;
-            font-size: 0.75em;
-            font-weight: 700;
+            font-size: 0.8em;
+            font-weight: 800;
             margin-left: 4px;
         }
 
-        .tag-booked { background: #E6F4EA; color: #137333; }
-        .tag-mustsee { background: #E8F0FE; color: #1A73E8; }
-        .tag-food { background: #FEF7E0; color: #B06000; }
+        .tag-booked { background: #C6F6D5; color: #22543D; }
+        .tag-mustsee { background: #EBF8FF; color: #2B6CB0; }
+        .tag-food { background: #FEFCBF; color: #744210; }
 
         .meta-box {
-            background-color: #F8F9FA;
+            background-color: #F7FAFC;
             border-radius: var(--radius-sm);
-            padding: 10px 12px;
-            margin-top: 10px;
-            font-size: 0.85em;
-            color: #5F6368;
-            border-left: 3px solid #CBD5E0;
+            padding: 12px 14px;
+            margin-top: 12px;
+            font-size: 0.95em;
+            color: #4A5568;
+            border-left: 4px solid #CBD5E0;
+            line-height: 1.5;
         }
 
         /* Table styling for mobile */
@@ -206,41 +239,174 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.82em;
+            font-size: 0.9em;
             background: white;
             border-radius: var(--radius-sm);
             overflow: hidden;
         }
 
         th, td {
-            padding: 8px 10px;
-            border: 1px solid #EDF2F7;
+            padding: 10px 12px;
+            border: 1px solid #E2E8F0;
             text-align: left;
             white-space: nowrap;
         }
 
-        th { background: #EDF2F7; font-weight: 700; }
+        th { background: #EDF2F7; font-weight: 800; }
+
+        /* Slide-out Sidebar Drawer for English Letters */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background-color: #1A202C;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            color: white;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+        }
+
+        .sidebar-content {
+            padding: 20px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .sidebar h2 {
+            color: #63B3ED;
+            font-size: 1.3em;
+            border-bottom: 1px solid #4A5568;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .sidebar h3 {
+            color: #F6AD55;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .letter-card {
+            background: #2D3748;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #4A5568;
+            font-family: Arial, sans-serif;
+            font-size: 0.9em;
+            white-space: pre-line;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            color: #A0AEC0;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        /* Editing Active Outline Indicator */
+        .editing-active #itinerary-content {
+            outline: 3px dashed #3182CE;
+            border-radius: 12px;
+            padding: 4px;
+            background: rgba(235, 248, 255, 0.4);
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
 
-    <!-- Cute Hero Banner with Background Image -->
+<!-- Slide-out Sidebar for English Letters -->
+<div id="englishSidebar" class="sidebar">
+    <span class="close-btn" onclick="closeNav()">&times;</span>
+    <div class="sidebar-content">
+        <h2>📄 English Assistance Letters<br><span style="font-size:0.7em; color:#A0AEC0;">(過海關 / 轉機英文協助信)</span></h2>
+        
+        <h3>1. 入境丹麥 (10/12 抵達哥本哈根時出示)</h3>
+        <div class="letter-card">To the Immigration Officer at Copenhagen Airport,
+
+Subject: Travel Assistance for My Parents
+
+Dear Officer,
+The travelers presenting this letter are my father, Hsiang Pin Kuan, and my mother, Kuei Mei Huang. They are visiting Denmark and Iceland for a 13-day holiday from October 12 to October 24, 2026.
+
+As they do not speak English fluently, I am providing this letter to assist with their entry process. I am their daughter, and I live in Belfast, UK. I have arrived at Copenhagen Airport earlier today from Dublin and am currently waiting for them at the Arrival Hall to pick them up.
+
+Key Travel Information:
+• Accommodation in Copenhagen: Nørrebrogade 13, 2200 Copenhagen, Denmark
+• Next Destination: They will fly to Iceland on October 16 with us for a self-driving tour.
+• Return Flight: They will depart from Iceland (KEF) back to Taiwan via London on October 24.
+
+Financial Support: All their travel expenses are fully covered by me and my partner.
+Contact Number: +44 7707273877[cite: 2]
+
+Thank you very much for your kind assistance.
+Sincerely, Ya Wen Kuan</div>
+
+        <h3>2. 離境與轉機 (10/24 離開冰島/倫敦轉機用)</h3>
+        <div class="letter-card">To Whom It May Concern,
+
+Subject: Assistance for Transit Passengers
+
+The elderly travelers holding this letter are my parents. They are currently on their way back to Taiwan.
+
+Flight Details (October 24, 2026):
+1. From Iceland (KEF) to London T2: FI 450, departing at 7:40.[cite: 2]
+2. From London T3 to Taiwan: CI 082, departing at 21:10.[cite: 2]
+
+As they do not speak English fluently, could you please kindly assist them with:
+• Locating the correct check-in counter or boarding gate.[cite: 2]
+• The process for Tax Refund (if applicable).[cite: 2]
+• Navigating the flight connection between T2 and T3.[cite: 2]
+
+Emergency Contact (Daughter in UK): +44 7707273877[cite: 2]
+
+Your help is greatly appreciated. Thank you.
+Best regards, Ya Wen Kuan</div>
+    </div>
+</div>
+
+<div class="container" id="mainContainer">
+
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <button class="btn-menu" onclick="openNav()">☰ 英文協助信</button>
+        <div class="edit-controls">
+            <button class="btn-edit" id="btnEdit" onclick="enableEditing()">✏️ 編輯行程</button>
+            <button class="btn-save" id="btnSave" onclick="savePage()">💾 儲存修改</button>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
     <div class="hero-banner">
         <span class="hero-badge">✨ 15天家族夢幻之旅</span>
         <h1>🇩🇰 丹麥與冰島 🇮🇸</h1>
         <p>2026年10月11日 – 10月25日</p>
     </div>
 
-    <!-- Toolbar -->
-    <div class="toolbar">
-        <div class="notice-pill">💡 提示：可以直接點擊螢幕修改文字！</div>
-        <button class="btn-save" onclick="savePage()">💾 儲存修改</button>
-    </div>
-
-    <!-- EDITABLE CONTENT CONTAINER -->
-    <div id="itinerary-content" contenteditable="true">
+    <!-- EDITABLE CONTENT CONTAINER (Read-Only by Default) -->
+    <div id="itinerary-content" contenteditable="false">
 
         <!-- OVERVIEW TABLE -->
         <h2 class="section-title title-dk">📋 預訂行程與航班總覽</h2>
@@ -264,13 +430,13 @@
                     <tr>
                         <td>10/12 (一)</td>
                         <td>✈️ 航班</td>
-                        <td>SAS SK552 / 瑞安航空 FR5070[cite: 2]</td>
-                        <td>雅文 09:35抵達；爸媽 11:50抵達哥本哈根[cite: 2]</td>
+                        <td>SAS SK552 / 瑞安航 FR5070[cite: 2]</td>
+                        <td>雅文 09:35抵達；爸媽 11:50抵達[cite: 2]</td>
                     </tr>
                     <tr>
                         <td>10/16 (五)</td>
                         <td>✈️ 航班</td>
-                        <td>SAS SK2595 (哥本哈根 → 雷克雅維克)[cite: 2]</td>
+                        <td>SAS SK2595 (哥本哈根 → 冰島)[cite: 2]</td>
                         <td>15:25 → 16:45 (全家)[cite: 2]</td>
                     </tr>
                     <tr>
@@ -352,12 +518,12 @@
                     <li><span class="time-tag">07:40</span> 爸媽抵達阿姆斯特丹 (AMS) 轉機 (2小時45分)[cite: 2]。</li>
                     <li><span class="time-tag">09:35</span> 雅文搭乘 FR5070 率先抵達哥本哈根 (CPH)[cite: 2]。</li>
                     <li><span class="time-tag">11:50</span> 爸媽搭乘 SK552 抵達哥本哈根 T3，於接機大廳會合[cite: 2]。</li>
-                    <li><span class="time-tag">13:00</span> 前往 Airbnb 寄放行李 (15:00可入住)[cite: 2]。可搭乘巴士 5C / 1A 至 Elmegade 站[cite: 2]。</li>
-                    <li><span class="time-tag">15:30</span> 輕鬆漫步於 Nørrebro 文青區及 Torvehallerne 玻璃市場[cite: 2]。</li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-food">推薦美食</span> <strong>Hallernes Smørrebrød</strong> 享用經典丹麥開放式三明治[cite: 2]。</li>
+                    <li><span class="time-tag">13:00</span> 前往 Airbnb 寄放行李 (15:00可入住)[cite: 2]。可搭乘巴士 5C / 1A 至 Elmegade 站[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:30</span> 輕鬆漫步於 Nørrebro 文青區及 Torvehallerne 玻璃市場[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Torvehallerne+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-food">推薦美食</span> <strong>Hallernes Smørrebrød</strong> 享用經典丹麥開放式三明治[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Hallernes+Smorrebrod+Copenhagen" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> Nørrebrogade 13, 2200 Copenhagen (2樓)[cite: 2]。
+                    🏡 <strong>住宿：</strong> Nørrebrogade 13, 2200 Copenhagen (2樓)[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a>
                 </div>
             </div>
         </div>
@@ -370,12 +536,12 @@
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>新港 (Nyhavn)：</strong> 打卡經典彩色房子與木造運河船。</li>
-                    <li><span class="time-tag">10:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>運河遊船 (Canal Tour)：</strong> 從新港出發，搭船欣賞哥本哈根水上風光。</li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">推薦午餐</span> <strong>Café Atelier September：</strong> 知名極簡風咖啡館，招牌瑞可塔起司吐司。</li>
-                    <li><span class="time-tag">14:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>阿馬林堡宮 & 大理石教堂：</strong> 參觀丹麥王室冬宮。</li>
-                    <li><span class="time-tag">16:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>圓塔 (Rundetårn)：</strong> 沿著螺旋坡道登上塔頂俯瞰市景。旁邊可買 Døp 有機熱狗攤[cite: 2]。</li>
-                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">高級餐廳</span> <strong>Höst：</strong> 榮獲設計大獎的新北歐料理，氣氛溫馨[cite: 2]。</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>新港 (Nyhavn)：</strong> 打卡經典彩色房子。 <a class="map-link" href="https://maps.google.com/?q=Nyhavn+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">10:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>運河遊船 (Canal Tour)：</strong> 搭船欣賞哥本哈根水上風光。 <a class="map-link" href="https://maps.google.com/?q=Stromma+Canal+Tours+Nyhavn" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">推薦午餐</span> <strong>Café Atelier September：</strong> 知名極簡風咖啡館。 <a class="map-link" href="https://maps.google.com/?q=Cafe+Atelier+September+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">14:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>阿馬林堡宮 & 大理石教堂：</strong> 參觀丹麥王室冬宮。 <a class="map-link" href="https://maps.google.com/?q=Amalienborg+Palace" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>圓塔 (Rundetårn)：</strong> 登上塔頂俯瞰市景，旁邊有 Døp 熱狗攤[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=The+Round+Tower+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">高級餐廳</span> <strong>Höst：</strong> 榮獲設計大獎的新北歐料理[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Host+Restaurant+Copenhagen" target="_blank">📍 地圖</a></li>
                 </ul>
             </div>
         </div>
@@ -388,11 +554,11 @@
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羅森堡城堡 (Rosenborg Castle)：</strong> 參觀皇室花園與地下皇冠寶物。</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-food">推薦午餐</span> <strong>Aamanns Replik：</strong> 精緻新式丹麥開放三明治。</li>
-                    <li><span class="time-tag">14:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>小美人魚像 & 五角星堡壘 (Kastellet)：</strong> 沿著港灣散步地標。</li>
-                    <li><span class="time-tag">16:30</span> <span class="tag tag-food">咖啡下午茶</span> <strong>Democratic Bakehouse：</strong> 品嚐全哥本哈根最讚的杏仁可頌。</li>
-                    <li><span class="time-tag">18:30</span> 🏡 <strong>溫馨自煮：</strong> 於超市購買食材，在民宿開煮溫暖晚餐[cite: 2]。</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羅森堡城堡 (Rosenborg Castle)：</strong> 參觀皇室地下寶物。 <a class="map-link" href="https://maps.google.com/?q=Rosenborg+Castle" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-food">推薦午餐</span> <strong>Aamanns Replik：</strong> 精緻新式開放三明治。 <a class="map-link" href="https://maps.google.com/?q=Aamanns+Replik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">14:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>小美人魚像 & 五角星堡壘：</strong> 散步港灣地標。 <a class="map-link" href="https://maps.google.com/?q=The+Little+Mermaid+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:30</span> <span class="tag tag-food">咖啡下午茶</span> <strong>Democratic Bakehouse：</strong> 招牌杏仁可頌。 <a class="map-link" href="https://maps.google.com/?q=Democratic+Bakehouse+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:30</span> 🏡 <strong>溫馨自煮：</strong> 於超市購買食材，在民宿開煮晚餐[cite: 2]。</li>
                 </ul>
             </div>
         </div>
@@ -405,10 +571,10 @@
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:00</span> <strong>藝文選擇：</strong> 搭乘火車 35 分鐘前往路易斯安那現代藝術館 (Louisiana Museum)。</li>
-                    <li><span class="time-tag">13:00</span> <span class="tag tag-food">在地特色</span> <strong>Torvehallerne 市場：</strong> 品嚐熱騰騰的丹麥鬆餅球 (Æbleskiver)[cite: 2]。</li>
-                    <li><span class="time-tag">15:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>克里斯蒂安堡宮 (Christiansborg Palace)：</strong> 丹麥議會所在地與免費瞭望塔。</li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>蒂沃利花園 (Tivoli Gardens)：</strong> 漫步全球第二古老的夢幻主題樂園夜景。</li>
+                    <li><span class="time-tag">10:00</span> <strong>藝文選擇：</strong> 火車 35 分鐘前往路易斯安那現代藝術館。 <a class="map-link" href="https://maps.google.com/?q=Louisiana+Museum+of+Modern+Art" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">13:00</span> <span class="tag tag-food">在地特色</span> <strong>Torvehallerne 市場：</strong> 品嚐丹麥鬆餅球 (Æbleskiver)[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Torvehallerne+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>克里斯蒂安堡宮：</strong> 丹麥議會與免費瞭望塔。 <a class="map-link" href="https://maps.google.com/?q=Christiansborg+Palace" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>蒂沃利花園 (Tivoli Gardens)：</strong> 夢幻主題樂園夜景。 <a class="map-link" href="https://maps.google.com/?q=Tivoli+Gardens" target="_blank">📍 地圖</a></li>
                 </ul>
             </div>
         </div>
@@ -419,20 +585,20 @@
         <!-- DAY 6 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 6 天：10/16 (週五) — 飛往冰島 & 首都基地的第一天</span>
+                <span>第 6 天：10/16 (週五) — 飛往冰島 & 首都第一天</span>
                 <span>CPH → KEF → 雷克雅維克 (車程: 50 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">12:30</span> 抵達哥本哈根 T3 機場[cite: 2]。</li>
-                    <li><span class="time-tag">15:25</span> 全家搭乘 SAS SK2595 飛往冰島雷克雅維克 (KEF)[cite: 2]。</li>
-                    <li><span class="time-tag">16:45</span> 抵達 KEF 機場，辦理入境與提領行李[cite: 2]。</li>
-                    <li><span class="time-tag">17:30</span> <strong>取車：</strong> 提領 Blue Car Rental 四輪傳動租車[cite: 2]。</li>
-                    <li><span class="time-tag">18:00</span> 🛒 <strong>重要採買：</strong> 衝一趟小豬超市 (Bónus)，買齊黃瓜、彩椒、Skyr優格與奶油[cite: 2]。</li>
-                    <li><span class="time-tag">19:30</span> 入住雷克雅維克 Airbnb，休息整備[cite: 2]。</li>
+                    <li><span class="time-tag">12:30</span> 抵達哥本哈根 T3 機場[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Copenhagen+Airport" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:25</span> 全家搭乘 SAS SK2595 飛往冰島 (KEF)[cite: 2]。</li>
+                    <li><span class="time-tag">16:45</span> 抵達 KEF 機場，辦理入境與提領行李[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Keflavik+Airport" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:30</span> <strong>取車：</strong> 提領 Blue Car Rental 租車[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Blue+Car+Rental+Keflavik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> 🛒 <strong>採買：</strong> 小豬超市 (Bónus) 買齊食材與零食[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Bonus+Keflavik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">19:30</span> 入住雷克雅維克 Airbnb，休息整備[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Sorlaskjol+12,+Reykjavik" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> Sörlaskjól 12, 107 Reykjavík[cite: 2]。<br>
+                    🏡 <strong>住宿：</strong> Sörlaskjól 12, 107 Reykjavík[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Sorlaskjol+12,+Reykjavik" target="_blank">📍 地圖</a><br>
                     🚗 <strong>車程：</strong> 約 50 公里 (45 分鐘)。
                 </div>
             </div>
@@ -441,20 +607,20 @@
         <!-- DAY 7 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 7 天：10/17 (週六) — 市區漫步 & 極光玻璃屋 Check-in</span>
+                <span>第 7 天：10/17 (週六) — 市區漫步 & 極光玻璃屋</span>
                 <span>雷克雅維克 → Hella (車程: 120 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 雷克雅維克市區：哈爾格林姆教堂與 Harpa 音樂廳。</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">已預訂美食</span> <strong>Old Iceland Restaurant：</strong> 享用傳統冰島鮮魚與羊肉湯[cite: 2]。</li>
-                    <li><span class="time-tag">14:00</span> 沿 1 號環島公路南下前往 Hella[cite: 2]。途經 Seljalandsfoss 水簾洞瀑布。</li>
-                    <li><span class="time-tag">16:00</span> <span class="tag tag-booked">夢幻住宿</span> 入住 <strong>Panorama Glass Lodge</strong> (Alva / Room 1 & 2)[cite: 2]。</li>
-                    <li><span class="time-tag">18:00</span> 享受專屬三溫暖與熱水按摩池，躺在床上等待夜間極光！[cite: 2]</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 雷克雅維克市區：哈爾格林姆教堂與 Harpa 音樂廳。 <a class="map-link" href="https://maps.google.com/?q=Hallgrimskirkja" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">預訂美食</span> <strong>Old Iceland Restaurant：</strong> 享用冰島鮮魚與羊肉湯[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Old+Iceland+Restaurant" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">14:00</span> 沿 1 號公路南下，途經 Seljalandsfoss 水簾洞瀑布。 <a class="map-link" href="https://maps.google.com/?q=Seljalandsfoss" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> <span class="tag tag-booked">夢幻住宿</span> 入住 <strong>Panorama Glass Lodge</strong>[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Panorama+Glass+Lodge+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> 享受專屬三溫暖與熱水池，躺在床上看極光！[cite: 2]</li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> Panorama Glass Lodge, Austurkrókur 1, 851 Hella[cite: 2]。<br>
-                    🚗 <strong>車程：</strong> 約 120 公里 (1小時40分鐘)。
+                    🏡 <strong>住宿：</strong> Panorama Glass Lodge, Austurkrókur 1, 851 Hella[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Panorama+Glass+Lodge+Iceland" target="_blank">📍 地圖</a><br>
+                    🚗 <strong>車程：</strong> 約 120 公里 (1.5小時)。
                 </div>
             </div>
         </div>
@@ -462,19 +628,19 @@
         <!-- DAY 8 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 8 天：10/18 (週日) — 冰島馬騎乘 & 地熱溫室</span>
+                <span>第 8 天：10/18 (週日) — 冰島馬體驗 & 地熱溫室</span>
                 <span>Hella & 金圈區域 (車程: 90 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
                     <li><span class="time-tag">10:00</span> 玻璃屋悠閒早餐，出發前往 Reykjadalur[cite: 2]。</li>
-                    <li><span class="time-tag">11:30</span> <span class="tag tag-food">特色美食</span> <strong>Friðheimar 番茄農場餐廳：</strong> 溫室內享用無限量番茄湯與新鮮手工麵包[cite: 2]。</li>
-                    <li><span class="time-tag">13:30</span> <span class="tag tag-booked">已預訂行程</span> <strong>Sólhestar 冰島馬體驗：</strong> 騎乘可愛溫順的冰島馬穿越山谷[cite: 2]。</li>
-                    <li><span class="time-tag">16:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Geysir 間歇泉 & Gullfoss 黃金瀑布：</strong> 見證幾分鐘噴發一次的自然奇觀。</li>
-                    <li><span class="time-tag">18:30</span> 返回玻璃屋享受第二晚奢華夜景[cite: 2]。</li>
+                    <li><span class="time-tag">11:30</span> <span class="tag tag-food">特色美食</span> <strong>Friðheimar 番茄農場：</strong> 溫室內享用番茄湯與手工麵包[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Fridheimar" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">13:30</span> <span class="tag tag-booked">預訂行程</span> <strong>Sólhestar 冰島馬體驗：</strong> 騎乘溫順冰島馬穿越山谷[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Solhestar+Horse+Riding+Reykjadalur" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Geysir 間歇泉 & Gullfoss 黃金瀑布。</strong> <a class="map-link" href="https://maps.google.com/?q=Geysir+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:30</span> 返回玻璃屋享用第二晚奢華夜景[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> Panorama Glass Lodge, Hella[cite: 2]。
+                    🏡 <strong>住宿：</strong> Panorama Glass Lodge, Hella[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Panorama+Glass+Lodge+Iceland" target="_blank">📍 地圖</a>
                 </div>
             </div>
         </div>
@@ -482,21 +648,21 @@
         <!-- DAY 9 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 9 天：10/19 (週一) — 南岸瀑布、黑沙灘與東移之旅</span>
+                <span>第 9 天：10/19 (週一) — 瀑布、黑沙灘與東移之旅</span>
                 <span>Hella → Vik → Öræfi (車程: 270 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:00</span> 退房出發，沿一號公路向東駛去[cite: 2]。</li>
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Skógafoss 彩虹瀑布：</strong> 感受磅礴水氣與壯麗景緻。</li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">特色午餐</span> <strong>The Soup Company (維克鎮)：</strong> 品嚐盛裝在黑色麵包碗裡的熔岩牛肉湯[cite: 2]。</li>
-                    <li><span class="time-tag">13:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Reynisfjara 玄武岩黑沙灘：</strong> 欣賞玄武岩柱群與玄武岩海蝕柱。</li>
-                    <li><span class="time-tag">15:00</span> 🛒 <strong>補充物資：</strong> 於 Vik (Krónan) 或教堂鎮補貨，Öræfi 周邊無超市[cite: 2]！</li>
-                    <li><span class="time-tag">17:00</span> 入住 <strong>The Potato Storage</strong> 公寓[cite: 2]。</li>
-                    <li><span class="time-tag">19:00</span> 🍳 <strong>自煮晚餐：</strong> 平底鍋香煎冰島煎羊排[cite: 2]。</li>
+                    <li><span class="time-tag">09:00</span> 出發沿一號公路向東駛去[cite: 2]。</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Skógafoss 彩虹瀑布。</strong> <a class="map-link" href="https://maps.google.com/?q=Skogafoss" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">特色午餐</span> <strong>The Soup Company：</strong> 品嚐黑色麵包碗熔岩湯[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=The+Soup+Company+Vik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">13:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Reynisfjara 玄武岩黑沙灘。</strong> <a class="map-link" href="https://maps.google.com/?q=Reynisfjara+Black+Sand+Beach" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:00</span> 🛒 <strong>補充物資：</strong> 於 Vik (Krónan) 補貨，Öræfi 周邊無超市[cite: 2]！ <a class="map-link" href="https://maps.google.com/?q=Kronan+Vik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:00</span> 入住 <strong>The Potato Storage</strong> 公寓[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">19:00</span> 🍳 <strong>自煮晚餐：</strong> 平底鍋香煎冰島羊排[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> The Potato Storage, Svínafell 1, Langatorfa, 785 Öræfi[cite: 2]。<br>
+                    🏡 <strong>住宿：</strong> The Potato Storage, Svínafell 1, Öræfi[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a><br>
                     🚗 <strong>車程：</strong> 約 270 公里 (3.5小時)。
                 </div>
             </div>
@@ -510,14 +676,14 @@
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:15</span> 抵達 Arctic Adventures 斯卡夫塔費爾大本營，領取裝備[cite: 2]。</li>
-                    <li><span class="time-tag">10:00</span> <span class="tag tag-booked">已預訂行程</span> <strong>藍冰洞與冰川健行 (4小時)：</strong> 越野車接駁，走入天然夢幻藍冰洞[cite: 2]。</li>
-                    <li><span class="time-tag">14:30</span> 於大本營或 Freysnes 加油站簡單享用午餐[cite: 2]。</li>
+                    <li><span class="time-tag">09:15</span> 抵達 Arctic Adventures 大本營，領取裝備[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Arctic+Adventures+Skaftafell" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">10:00</span> <span class="tag tag-booked">預訂行程</span> <strong>藍冰洞與冰川健行 (4小時)：</strong> 走入天然夢幻藍冰洞[cite: 2]。</li>
+                    <li><span class="time-tag">14:30</span> 於大本營或 Freysnes 加油站享用午餐[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Freysnes+Gas+Station" target="_blank">📍 地圖</a></li>
                     <li><span class="time-tag">16:00</span> 返回公寓休息，遠眺瓦特納冰川壯麗山景[cite: 2]。</li>
-                    <li><span class="time-tag">18:30</span> 🍳 <strong>自煮晚餐：</strong> 熱騰騰的高湯麵條加入冰島甜蝦[cite: 2]。</li>
+                    <li><span class="time-tag">18:30</span> 🍳 <strong>自煮晚餐：</strong> 熱高湯麵加入冰島甜蝦[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> The Potato Storage, Öræfi[cite: 2]。
+                    🏡 <strong>住宿：</strong> The Potato Storage, Öræfi[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a>
                 </div>
             </div>
         </div>
@@ -530,15 +696,15 @@
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:15</span> 抵達 Jökulsárlón 冰河湖。</li>
-                    <li><span class="time-tag">11:00</span> <span class="tag tag-booked">已預訂行程</span> <strong>Zodiac 快艇導覽 (1小時15分)：</strong> 穿梭於巨型浮冰間[cite: 2]。</li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>鑽石黑沙灘 (Diamond Beach)：</strong> 欣賞岸邊如鑽石般閃耀的冰塊。</li>
-                    <li><span class="time-tag">15:00</span> 開車前往赫本鎮 (Höfn) 港口 (車程1小時)。</li>
-                    <li><span class="time-tag">17:30</span> <span class="tag tag-food">頂級美食</span> <strong>Pakkhús Restaurant：</strong> 港邊舊倉庫餐廳，必吃蒜烤冰島小龍蝦[cite: 2]。</li>
+                    <li><span class="time-tag">10:15</span> 抵達 Jökulsárlón 冰河湖。 <a class="map-link" href="https://maps.google.com/?q=Jokulsarlon" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">11:00</span> <span class="tag tag-booked">預訂行程</span> <strong>Zodiac 快艇導覽 (1小時15分)：</strong> 穿梭於巨型浮冰間[cite: 2]。</li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>鑽石黑沙灘 (Diamond Beach)。</strong> <a class="map-link" href="https://maps.google.com/?q=Diamond+Beach+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:00</span> 開車前往赫本鎮 (Höfn) 港口 (車程1小時)。 <a class="map-link" href="https://maps.google.com/?q=Hofn+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:30</span> <span class="tag tag-food">頂級美食</span> <strong>Pakkhús Restaurant：</strong> 港邊必吃蒜烤小龍蝦[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Pakkhus+Restaurant" target="_blank">📍 地圖</a></li>
                     <li><span class="time-tag">20:00</span> 驅車返回 Öræfi 民宿[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> The Potato Storage, Öræfi[cite: 2]。
+                    🏡 <strong>住宿：</strong> The Potato Storage, Öræfi[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a>
                 </div>
             </div>
         </div>
@@ -551,13 +717,13 @@
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:00</span> 退房出發，沿一號公路一路向西折返[cite: 2]。</li>
-                    <li><span class="time-tag">11:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羽毛峽谷 (Fjaðrárgljúfur Canyon)：</strong> 沿著蜿蜒壯麗的綠色峽谷步道漫步。</li>
-                    <li><span class="time-tag">15:30</span> 入住 Selfoss Airbnb，稍微休息[cite: 2]。</li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-booked">已預訂美食</span> <strong>Fjöruborðið 海鮮餐廳：</strong> 享用名揚冰島的蒜香龍蝦湯與爆炒龍蝦尾[cite: 2]。</li>
+                    <li><span class="time-tag">09:00</span> 退房出發，沿一號公路折返[cite: 2]。</li>
+                    <li><span class="time-tag">11:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羽毛峽谷 (Fjaðrárgljúfur Canyon)。</strong> <a class="map-link" href="https://maps.google.com/?q=Fjadrargljufur" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:30</span> 入住 Selfoss Airbnb，稍微休息[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Kelduland+5,+Selfoss" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-booked">預訂美食</span> <strong>Fjöruborðið 海鮮餐廳：</strong> 享用龍蝦湯與爆炒龍蝦尾[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Fjorubordid" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> Kelduland 5, 800 Selfoss[cite: 2]。<br>
+                    🏡 <strong>住宿：</strong> Kelduland 5, 800 Selfoss[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Kelduland+5,+Selfoss" target="_blank">📍 地圖</a><br>
                     🚗 <strong>車程：</strong> 約 320 公里 (4小時)。
                 </div>
             </div>
@@ -572,13 +738,13 @@
             <div class="day-body">
                 <ul class="timeline">
                     <li><span class="time-tag">09:30</span> 退房驅車穿越雷克雅尼斯半島。</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">已預訂放鬆</span> <strong>藍湖地熱溫泉 (Blue Lagoon)：</strong> 敷矽泥面膜，泡火山地熱藍泉[cite: 2]。</li>
-                    <li><span class="time-tag">16:00</span> 開車前往 KEF 機場，辦理 Blue Car Rental 歸還租車[cite: 2]。</li>
-                    <li><span class="time-tag">17:00</span> 入住 <strong>Aurora Hotel</strong> (距離機場航廈步行僅需 5 分鐘)[cite: 2]。</li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">預訂放鬆</span> <strong>藍湖地熱溫泉 (Blue Lagoon)：</strong> 敷矽泥面膜，泡火山溫泉[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Blue+Lagoon+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> 開車前往 KEF 機場，歸還 Blue Car Rental 租車[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Blue+Car+Rental+Keflavik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:00</span> 入住 <strong>Aurora Hotel</strong> (步行 5 分鐘至航廈)[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Aurora+Hotel+Keflavik+Airport" target="_blank">📍 地圖</a></li>
                     <li><span class="time-tag">18:30</span> 機場飯店享用晚餐，打包整理行李[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    🏡 <strong>住宿：</strong> Aurora Hotel at Reykjavik-Keflavik Airport Terminal[cite: 2]。
+                    🏡 <strong>住宿：</strong> Aurora Hotel at Reykjavik-Keflavik Airport Terminal[cite: 2]。 <a class="map-link" href="https://maps.google.com/?q=Aurora+Hotel+Keflavik+Airport" target="_blank">📍 地圖</a>
                 </div>
             </div>
         </div>
@@ -596,7 +762,7 @@
                     <li><span class="time-tag">04:40</span> 辦理登機與託運行李 (冰島航空 FI450)[cite: 2]。</li>
                     <li><span class="time-tag">05:10</span> 陪同至安檢口，將英文協助信交給爸媽[cite: 2]。</li>
                     <li><span class="time-tag">07:40</span> 爸媽搭乘 FI450 飛往倫敦希斯洛機場 (T2)[cite: 2]。</li>
-                    <li><span class="time-tag">11:55</span> 爸媽抵達倫敦 T2，跟隨紫色指標前往 T3 轉機 (轉機時間9小時15分)[cite: 2]。</li>
+                    <li><span class="time-tag">11:55</span> 爸媽抵達倫敦 T2，前往 T3 轉機 (轉機時間9小時15分)[cite: 2]。</li>
                     <li><span class="time-tag">21:10</span> 爸媽搭乘華航 CI082 飛往台北[cite: 2]。</li>
                 </ul>
             </div>
@@ -621,18 +787,47 @@
 </div>
 
 <script>
-    // Save function using local storage
-    function savePage() {
-        const content = document.getElementById('itinerary-content').innerHTML;
-        localStorage.setItem('savedItinerary_DK_IS_ZH', content);
-        alert('修改已成功儲存於手機瀏覽器中！');
+    // Open/Close Side Navigation Drawer
+    function openNav() {
+        document.getElementById("englishSidebar").style.width = "320px";
+        document.getElementById("overlay").style.display = "block";
     }
 
-    // Load saved content automatically
+    function closeNav() {
+        document.getElementById("englishSidebar").style.width = "0";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    // Toggle Editing Mode
+    function enableEditing() {
+        const content = document.getElementById('itinerary-content');
+        content.contentEditable = "true";
+        document.getElementById('mainContainer').classList.add('editing-active');
+        document.getElementById('btnEdit').style.display = 'none';
+        document.getElementById('btnSave').style.display = 'inline-block';
+        alert('✏️ 編輯模式已開啟！現在您可以直接點擊畫面的任何文字進行修改。修改完畢後請點選右上角「💾 儲存修改」。');
+    }
+
+    // Save Edited Content
+    function savePage() {
+        const content = document.getElementById('itinerary-content');
+        content.contentEditable = "false";
+        document.getElementById('mainContainer').classList.remove('editing-active');
+        
+        // Save HTML to LocalStorage
+        localStorage.setItem('savedItinerary_V3', content.innerHTML);
+        
+        document.getElementById('btnEdit').style.display = 'inline-block';
+        document.getElementById('btnSave').style.display = 'none';
+        
+        alert('💾 修改已成功儲存於您的手機中！頁面已恢復唯讀模式。');
+    }
+
+    // Load Saved State
     window.onload = function() {
-        const savedContent = localStorage.getItem('savedItinerary_DK_IS_ZH');
-        if (savedContent) {
-            document.getElementById('itinerary-content').innerHTML = savedContent;
+        const saved = localStorage.getItem('savedItinerary_V3');
+        if (saved) {
+            document.getElementById('itinerary-content').innerHTML = saved;
         }
     };
 </script>
