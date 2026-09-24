@@ -141,7 +141,7 @@
         .day-card {
             background: white;
             border-radius: var(--radius-lg);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
             border: 1px solid rgba(0,0,0,0.04);
@@ -161,6 +161,20 @@
 
         .denmark .day-header { background: var(--dk-red-light); color: var(--dk-red-dark); }
         .iceland .day-header { background: var(--is-blue-light); color: var(--is-blue-dark); }
+
+        .day-image-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .day-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
         .day-body { padding: 16px; }
 
@@ -531,21 +545,21 @@ Best regards, Ya Wen Kuan</div>
         <div class="food-guide-card">
             <h3>🇩🇰 哥本哈根必吃 (Copenhagen Food)</h3>
             <ul>
-                <li><strong>開放式三明治 (Smørrebrød)：</strong> 黑麥麵包搭配新鮮甜蝦或酪梨。</li>
-                <li><strong>丹麥街頭熱狗堡 (Ristet Pølse / Døp)：</strong> 搭配脆洋蔥與醃黃瓜。</li>
-                <li><strong>熱鬆餅球 (Æbleskiver)：</strong> 天冷時必吃的海綿蛋糕口感熱甜點。</li>
-                <li><strong>有機杏仁可頌 (Almond Croissant)：</strong> Democratic Bakehouse 招牌。</li>
+                <li><strong>🥪 開放式三明治 (Smørrebrød)：</strong> 黑麥麵包搭配新鮮甜蝦或酪梨。</li>
+                <li><strong>🌭 丹麥街頭熱狗堡 (Ristet Pølse / Døp)：</strong> 搭配脆洋蔥與醃黃瓜。</li>
+                <li><strong>🥞 熱鬆餅球 (Æbleskiver)：</strong> 天冷時必吃的海綿蛋糕口感熱甜點。</li>
+                <li><strong>🥐 有機杏仁可頌 (Almond Croissant)：</strong> Democratic Bakehouse 招牌。</li>
             </ul>
         </div>
 
         <div class="food-guide-card" style="border-left-color: var(--is-blue);">
             <h3 style="color: var(--is-blue);">🇮🇸 冰島極地必吃 (Iceland Food & Specialties)</h3>
             <ul>
-                <li><strong>溫室番茄湯 (Friðheimar Tomato Soup)：</strong> 搭配無限供應手工麵包。</li>
-                <li><strong>傳統清燉羊肉湯 (Kjötsúpa)：</strong> 大量馬鈴薯與蘿蔔，最合爸媽胃口。</li>
-                <li><strong>蒜烤冰島小龍蝦 (Langoustine / Pakkhús)：</strong> 肉質鮮甜極致。</li>
-                <li><strong>冰島優格 (Skyr)：</strong> 高蛋白低脂肪，推薦藍莓或草莓口味。</li>
-                <li><strong>🍟 冰島 KFC (Icelandic KFC)：</strong> 全球極具特色的肯德基！採用優質食材，口感特別酥脆美味。</li>
+                <li><strong>🍅 溫室番茄湯 (Friðheimar Tomato Soup)：</strong> 搭配無限供應手工麵包。</li>
+                <li><strong>🥣 傳統清燉羊肉湯 (Kjötsúpa)：</strong> 大量馬鈴薯與蘿蔔，最合爸媽胃口。</li>
+                <li><strong>🦞 蒜烤冰島小龍蝦 (Langoustine / Pakkhús)：</strong> 肉質鮮甜極致。</li>
+                <li><strong>🥛 冰島優格 (Skyr)：</strong> 高蛋白低脂肪，推薦藍莓或草莓口味。</li>
+                <li><strong>🍗 冰島 KFC (Icelandic KFC)：</strong> 全球極具特色的肯德基！採用優質食材，口感特別酥脆美味。</li>
                 <li><strong>🥤 冰島可口可樂 (Icelandic Coca-Cola)：</strong> 號稱全世界最好喝的可樂！因為使用冰島天然純淨冰川泉水調配，口感順口甜美。</li>
             </ul>
         </div>
@@ -556,15 +570,18 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 1 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>第 1 天：10/11 (週日) — 啟程</span>
+                <span>第 1 天：10/11 (週日) — 啟程 🛫</span>
                 <span>台北 → 阿姆斯特丹</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Flight">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">22:50</span> 爸媽從桃園機場 (Taiwan Taoyuan Airport - T1) 搭乘華航 CI073 飛往阿姆斯特丹。</li>
+                    <li><span class="time-tag">22:50</span> 🛫 爸媽從桃園機場 (Taiwan Taoyuan Airport - T1) 搭乘華航 CI073 飛往阿姆斯特丹。</li>
                 </ul>
                 <div class="hotel-box">
-                    🏨 <strong>今日住宿 Highlights：</strong> 華航夜間跨國航班機艙 (Flight CI073 Boarding)。
+                    🏨 <strong>今日住宿 Highlights：</strong> ✈️ 華航夜間跨國航班機艙 (Flight CI073 Boarding)。
                 </div>
             </div>
         </div>
@@ -572,17 +589,20 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 2 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>第 2 天：10/12 (週一) — 抵達哥本哈根</span>
+                <span>第 2 天：10/12 (週一) — 抵達哥本哈根 🇩🇰</span>
                 <span>哥本哈根</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=800&q=80" alt="Copenhagen Street">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">07:40</span> 爸媽抵達阿姆斯特丹 (Amsterdam Airport Schiphol - AMS) 轉機 (2小時45分)。</li>
-                    <li><span class="time-tag">09:35</span> 雅文搭乘 FR5070 率先抵達哥本哈根機場 (Copenhagen Airport - CPH)。</li>
-                    <li><span class="time-tag">11:50</span> 爸媽搭乘 SK552 抵達哥本哈根 T3，於接機大廳會合。</li>
-                    <li><span class="time-tag">13:00</span> 前往 Airbnb 寄放行李 (15:00可入住)。搭乘巴士 5C / 1A 至 Elmegade 站。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">15:30</span> 輕鬆漫步於 Nørrebro 文青區及 Torvehallerne 玻璃市場。 <a class="map-link" href="https://maps.google.com/?q=Torvehallerne+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-food">推薦美食</span> <strong>Hallernes Smørrebrød</strong> 享用經典丹麥開放式三明治。 <a class="map-link" href="https://maps.google.com/?q=Hallernes+Smorrebrod+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">07:40</span> 🇳🇱 爸媽抵達阿姆斯特丹 (Amsterdam Airport Schiphol - AMS) 轉機 (2小時45分)。</li>
+                    <li><span class="time-tag">09:35</span> 🇩🇰 雅文搭乘 FR5070 率先抵達哥本哈根機場 (Copenhagen Airport - CPH)。</li>
+                    <li><span class="time-tag">11:50</span> 👨‍👩‍👧 爸媽搭乘 SK552 抵達哥本哈根 T3，於接機大廳精彩會合！</li>
+                    <li><span class="time-tag">13:00</span> 🧳 前往 Airbnb 寄放行李 (15:00可入住)。搭乘巴士 5C / 1A 至 Elmegade 站。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:30</span> ☕ 輕鬆漫步於 Nørrebro 文青區及 Torvehallerne 玻璃市場。 <a class="map-link" href="https://maps.google.com/?q=Torvehallerne+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-food">推薦美食</span> 🥪 <strong>Hallernes Smørrebrød</strong> 享用經典丹麥開放式三明治。 <a class="map-link" href="https://maps.google.com/?q=Hallernes+Smorrebrod+Copenhagen" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 哥本哈根 Nørrebro 溫馨大空間雙臥室公寓 (130 平方公尺、配備齊全廚房與電視)。<br>
@@ -594,17 +614,20 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 3 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>第 3 天：10/13 (週二) — 經典地標巡禮</span>
+                <span>第 3 天：10/13 (週二) — 經典地標巡禮 🚤</span>
                 <span>哥本哈根</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Nyhavn Copenhagen">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>新港 (Nyhavn)：</strong> 打卡經典彩色房子與木造運河船。 <a class="map-link" href="https://maps.google.com/?q=Nyhavn+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">10:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>運河遊船 (Stromma Canal Tour)：</strong> 搭船欣賞哥本哈根水上風光。 <a class="map-link" href="https://maps.google.com/?q=Stromma+Canal+Tours+Nyhavn" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">推薦午餐</span> <strong>Café Atelier September：</strong> 知名極簡風咖啡館。 <a class="map-link" href="https://maps.google.com/?q=Cafe+Atelier+September+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">14:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>阿馬林堡宮 (Amalienborg Palace) & 大理石教堂 (Frederik's Church)。</strong> <a class="map-link" href="https://maps.google.com/?q=Amalienborg+Palace" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">16:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>圓塔 (Rundetårn)：</strong> 登上塔頂俯瞰市景，旁邊有 Døp 熱狗攤。 <a class="map-link" href="https://maps.google.com/?q=The+Round+Tower+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">高級餐廳</span> <strong>Höst：</strong> 榮獲設計大獎的新北歐料理。 <a class="map-link" href="https://maps.google.com/?q=Host+Restaurant+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 📸 <strong>新港 (Nyhavn)：</strong> 打卡經典彩色房子與木造運河船。 <a class="map-link" href="https://maps.google.com/?q=Nyhavn+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">10:30</span> <span class="tag tag-mustsee">必訪景點</span> 🚤 <strong>運河遊船 (Stromma Canal Tour)：</strong> 搭船欣賞哥本哈根水上風光。 <a class="map-link" href="https://maps.google.com/?q=Stromma+Canal+Tours+Nyhavn" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">推薦午餐</span> ☕ <strong>Café Atelier September：</strong> 知名極簡風咖啡館。 <a class="map-link" href="https://maps.google.com/?q=Cafe+Atelier+September+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">14:30</span> <span class="tag tag-mustsee">必訪景點</span> 🏰 <strong>阿馬林堡宮 (Amalienborg Palace) & 大理石教堂 (Frederik's Church)。</strong> <a class="map-link" href="https://maps.google.com/?q=Amalienborg+Palace" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:30</span> <span class="tag tag-mustsee">必訪景點</span> 🗼 <strong>圓塔 (Rundetårn)：</strong> 登上塔頂俯瞰市景，旁邊有 Døp 熱狗攤。 <a class="map-link" href="https://maps.google.com/?q=The+Round+Tower+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">高級餐廳</span> 🍽️ <strong>Höst：</strong> 榮獲設計大獎的新北歐料理。 <a class="map-link" href="https://maps.google.com/?q=Host+Restaurant+Copenhagen" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 哥本哈根 Nørrebro 溫馨公寓 (Nørrebrogade 13)。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a>
@@ -615,16 +638,19 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 4 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>第 4 天：10/14 (週三) — 城堡與皇家花園</span>
+                <span>第 4 天：10/14 (週三) — 城堡與皇家花園 👑</span>
                 <span>哥本哈根</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80" alt="Rosenborg Castle">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羅森堡城堡 (Rosenborg Castle) & 國王花園 (King's Garden)。</strong> <a class="map-link" href="https://maps.google.com/?q=Rosenborg+Castle" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-food">推薦午餐</span> <strong>Aamanns Replik：</strong> 精緻新式開放三明治。 <a class="map-link" href="https://maps.google.com/?q=Aamanns+Replik" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">14:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>小美人魚像 (The Little Mermaid) & 五角星堡壘 (Kastellet)。</strong> <a class="map-link" href="https://maps.google.com/?q=The+Little+Mermaid+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">16:30</span> <span class="tag tag-food">咖啡下午茶</span> <strong>Democratic Bakehouse：</strong> 招牌杏仁可頌。 <a class="map-link" href="https://maps.google.com/?q=Democratic+Bakehouse+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">18:30</span> 🏡 <strong>溫馨自煮：</strong> 於超市購買食材，在民宿開煮晚餐。</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 👑 <strong>羅森堡城堡 (Rosenborg Castle) & 國王花園 (King's Garden)。</strong> <a class="map-link" href="https://maps.google.com/?q=Rosenborg+Castle" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-food">推薦午餐</span> 🥪 <strong>Aamanns Replik：</strong> 精緻新式開放三明治。 <a class="map-link" href="https://maps.google.com/?q=Aamanns+Replik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">14:00</span> <span class="tag tag-mustsee">必訪景點</span> 🧜‍♀️ <strong>小美人魚像 (The Little Mermaid) & 五角星堡壘 (Kastellet)。</strong> <a class="map-link" href="https://maps.google.com/?q=The+Little+Mermaid+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:30</span> <span class="tag tag-food">咖啡下午茶</span> 🥐 <strong>Democratic Bakehouse：</strong> 招牌杏仁可頌。 <a class="map-link" href="https://maps.google.com/?q=Democratic+Bakehouse+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:30</span> 🏡 🍳 <strong>溫馨自煮：</strong> 於超市購買食材，在民宿開煮晚餐。</li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 哥本哈根 Nørrebro 溫馨公寓 (Nørrebrogade 13)。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a>
@@ -635,16 +661,19 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 5 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>第 5 天：10/15 (週四) — 市區主題公園與童話夜景</span>
+                <span>第 5 天：10/15 (週四) — 市區樂園與童話夜景 🎡</span>
                 <span>哥本哈根</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Tivoli Gardens">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>蒂沃利花園 (Tivoli Gardens)：</strong> 白天暢遊全球第二古老、充滿萬聖節童話氛圍的主題樂園。 <a class="map-link" href="https://maps.google.com/?q=Tivoli+Gardens" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">13:00</span> <span class="tag tag-food">在地特色</span> <strong>Torvehallerne 市場：</strong> 品嚐丹麥鬆餅球 (Æbleskiver) 與特級咖啡。 <a class="map-link" href="https://maps.google.com/?q=Torvehallerne+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">15:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>克里斯蒂安堡宮 (Christiansborg Palace)：</strong> 參觀丹麥議會殿堂與瞭望塔俯瞰市景。 <a class="map-link" href="https://maps.google.com/?q=Christiansborg+Palace" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">17:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>行人徒步區漫步 (Strøget Walkway) & 國王新廣場 (Kongens Nytorv)。</strong> <a class="map-link" href="https://maps.google.com/?q=Stroget+Copenhagen" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">推薦晚餐</span> <strong>Kødbyens Fiskebar：</strong> 肉品加工區內的米其林推薦優質海鮮餐廳。 <a class="map-link" href="https://maps.google.com/?q=Kodbyens+Fiskebar" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">10:00</span> <span class="tag tag-mustsee">必訪景點</span> 🎡 <strong>蒂沃利花園 (Tivoli Gardens)：</strong> 白天暢遊全球第二古老、充滿萬聖節童話氛圍的主題樂園。 <a class="map-link" href="https://maps.google.com/?q=Tivoli+Gardens" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">13:00</span> <span class="tag tag-food">在地特色</span> 🥞 <strong>Torvehallerne 市場：</strong> 品嚐丹麥鬆餅球 (Æbleskiver) 與特級咖啡。 <a class="map-link" href="https://maps.google.com/?q=Torvehallerne+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:30</span> <span class="tag tag-mustsee">必訪景點</span> 🏛️ <strong>克里斯蒂安堡宮 (Christiansborg Palace)：</strong> 參觀丹麥議會殿堂與瞭望塔俯瞰市景。 <a class="map-link" href="https://maps.google.com/?q=Christiansborg+Palace" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:30</span> <span class="tag tag-mustsee">必訪景點</span> 🛍️ <strong>行人徒步區漫步 (Strøget Walkway) & 國王新廣場 (Kongens Nytorv)。</strong> <a class="map-link" href="https://maps.google.com/?q=Stroget+Copenhagen" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">推薦晚餐</span> 🐟 <strong>Kødbyens Fiskebar：</strong> 肉品加工區內的米其林推薦優質海鮮餐廳。 <a class="map-link" href="https://maps.google.com/?q=Kodbyens+Fiskebar" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 哥本哈根 Nørrebro 溫馨公寓 (Nørrebrogade 13) 最後一晚。 <a class="map-link" href="https://maps.google.com/?q=Nørrebrogade+13,+2200+Copenhagen" target="_blank">📍 地圖</a>
@@ -658,17 +687,20 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 6 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 6 天：10/16 (週五) — 飛往冰島 & 首都輕鬆晚餐</span>
+                <span>第 6 天：10/16 (週五) — 飛往冰島 & 首都輕鬆晚餐 🇮🇸</span>
                 <span>CPH → KEF → 雷克雅維克 (車程: 50 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80" alt="Reykjavik Iceland">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">12:30</span> 抵達哥本哈根 T3 機場準備登機。 <a class="map-link" href="https://maps.google.com/?q=Copenhagen+Airport" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">15:25</span> 全家搭乘 SAS SK2595 飛往冰島凱夫拉維克 (Keflavík International Airport - KEF)。</li>
-                    <li><span class="time-tag">16:45</span> 抵達 KEF 機場，辦理入境與提領行李。 <a class="map-link" href="https://maps.google.com/?q=Keflavik+Airport" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">17:30</span> <strong>取車：</strong> 提領 Blue Car Rental 4x4 四輪傳動租車。 <a class="map-link" href="https://maps.google.com/?q=Blue+Car+Rental+Keflavik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:30</span> ✈️ 抵達哥本哈根 T3 機場準備登機。 <a class="map-link" href="https://maps.google.com/?q=Copenhagen+Airport" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:25</span> 🛫 全家搭乘 SAS SK2595 飛往冰島凱夫拉維克 (Keflavík International Airport - KEF)。</li>
+                    <li><span class="time-tag">16:45</span> 🛬 抵達 KEF 機場，辦理入境與提領行李。 <a class="map-link" href="https://maps.google.com/?q=Keflavik+Airport" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:30</span> 🚗 <strong>取車：</strong> 提領 Blue Car Rental 4x4 四輪傳動租車。 <a class="map-link" href="https://maps.google.com/?q=Blue+Car+Rental+Keflavik" target="_blank">📍 地圖</a></li>
                     <li><span class="time-tag">18:00</span> 🛒 <strong>採買：</strong> 小豬超市 (Bónus) 買齊地熱小黃瓜、彩椒與點心。 <a class="map-link" href="https://maps.google.com/?q=Bonus+Keflavik" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">19:30</span> <span class="tag tag-food">推薦晚餐</span> <strong>Kaffihús Vesturbæjar：</strong> 首都質感社區餐廳，享用道地溫馨晚餐與精緻甜點。 <a class="map-link" href="https://maps.google.com/?q=Kaffihus+Vesturbaejar" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">19:30</span> <span class="tag tag-food">推薦晚餐</span> 🍽️ <strong>Kaffihús Vesturbæjar：</strong> 首都質感社區餐廳，享用道地溫馨晚餐與精緻甜點。 <a class="map-link" href="https://maps.google.com/?q=Kaffihus+Vesturbaejar" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 雷克雅維克市區優雅景觀民宿。<br>
@@ -681,16 +713,19 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 7 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 7 天：10/17 (週六) — 市區漫步 & 極光玻璃屋</span>
+                <span>第 7 天：10/17 (週六) — 市區漫步 & 極光玻璃屋 ✨</span>
                 <span>雷克雅維克 → Hella (車程: 120 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80" alt="Northern Lights Glass Lodge">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 雷克雅維克市區：哈爾格林姆教堂 (Hallgrímskirkja) 與 Harpa 音樂廳。 <a class="map-link" href="https://maps.google.com/?q=Hallgrimskirkja" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">預訂美食</span> <strong>Old Iceland Restaurant：</strong> 享用冰島鮮魚與傳統羊肉湯。 <a class="map-link" href="https://maps.google.com/?q=Old+Iceland+Restaurant" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">14:00</span> 沿 1 號公路南下，途經 Seljalandsfoss 水簾洞瀑布。 <a class="map-link" href="https://maps.google.com/?q=Seljalandsfoss" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">16:00</span> <span class="tag tag-booked">夢幻住宿</span> 入住 <strong>Panorama Glass Lodge</strong>。 <a class="map-link" href="https://maps.google.com/?q=Panorama+Glass+Lodge+Iceland" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">18:00</span> 享受專屬三溫暖與熱水池，躺在床上看極光！</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> ⛪ 雷克雅維克市區：哈爾格林姆教堂 (Hallgrímskirkja) 與 Harpa 音樂廳。 <a class="map-link" href="https://maps.google.com/?q=Hallgrimskirkja" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">預訂美食</span> 🥣 <strong>Old Iceland Restaurant：</strong> 享用冰島鮮魚與傳統羊肉湯。 <a class="map-link" href="https://maps.google.com/?q=Old+Iceland+Restaurant" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">14:00</span> 💦 沿 1 號公路南下，途經 Seljalandsfoss 水簾洞瀑布。 <a class="map-link" href="https://maps.google.com/?q=Seljalandsfoss" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> <span class="tag tag-booked">夢幻住宿</span> ✨ 入住 <strong>Panorama Glass Lodge</strong>。 <a class="map-link" href="https://maps.google.com/?q=Panorama+Glass+Lodge+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> ♨️ 享受專屬三溫暖與熱水池，躺在床上看極光！</li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 全星空全景極光玻璃屋 (Panorama Glass Lodge - Alva / Room 1 & 2)，戶外桑拿與極光浴缸。<br>
@@ -703,16 +738,19 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 8 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 8 天：10/18 (週日) — 冰島馬體驗 & 地熱溫室</span>
+                <span>第 8 天：10/18 (週日) — 冰島馬體驗 & 地熱溫室 🐎</span>
                 <span>Hella & 金圈區域 (車程: 90 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" alt="Icelandic Horse">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:00</span> 玻璃屋悠閒早餐，出發前往 Reykjadalur 山谷。</li>
-                    <li><span class="time-tag">11:30</span> <span class="tag tag-food">特色美食</span> <strong>Friðheimar 番茄農場：</strong> 溫室內享用番茄湯與手工麵包。 <a class="map-link" href="https://maps.google.com/?q=Fridheimar" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">13:30</span> <span class="tag tag-booked">預訂行程</span> <strong>Sólhestar 冰島馬騎乘體驗 (Sólhestar Horse Riding)：</strong> 穿越山谷。 <a class="map-link" href="https://maps.google.com/?q=Solhestar+Horse+Riding+Reykjadalur" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">16:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>蓋錫爾間歇泉 (Geysir) & 黃金瀑布 (Gullfoss)。</strong> <a class="map-link" href="https://maps.google.com/?q=Geysir+Iceland" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">18:30</span> 返回玻璃屋享用第二晚奢華夜景。</li>
+                    <li><span class="time-tag">10:00</span> 🥐 玻璃屋悠閒早餐，出發前往 Reykjadalur 山谷。</li>
+                    <li><span class="time-tag">11:30</span> <span class="tag tag-food">特色美食</span> 🍅 <strong>Friðheimar 番茄農場：</strong> 溫室內享用番茄湯與手工麵包。 <a class="map-link" href="https://maps.google.com/?q=Fridheimar" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">13:30</span> <span class="tag tag-booked">預訂行程</span> 🐎 <strong>Sólhestar 冰島馬騎乘體驗 (Sólhestar Horse Riding)：</strong> 穿越山谷。 <a class="map-link" href="https://maps.google.com/?q=Solhestar+Horse+Riding+Reykjadalur" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> <span class="tag tag-mustsee">必訪景點</span> 🌋 <strong>蓋錫爾間歇泉 (Geysir) & 黃金瀑布 (Gullfoss)。</strong> <a class="map-link" href="https://maps.google.com/?q=Geysir+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:30</span> ✨ 返回玻璃屋享用第二晚奢華夜景。</li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> Panorama Glass Lodge 全景極光玻璃屋 (第二晚)。 <a class="map-link" href="https://maps.google.com/?q=Panorama+Glass+Lodge+Iceland" target="_blank">📍 地圖</a>
@@ -723,17 +761,20 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 9 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 9 天：10/19 (週一) — 瀑布、黑沙灘與東移之旅</span>
+                <span>第 9 天：10/19 (週一) — 瀑布、黑沙灘與東移之旅 🌊</span>
                 <span>Hella → Vik → Öræfi (車程: 270 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1500043357865-c6b8827edf10?auto=format&fit=crop&w=800&q=80" alt="Reynisfjara Black Sand Beach">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:00</span> 退房出發沿一號公路向東駛去。</li>
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Skógafoss 彩虹瀑布。</strong> <a class="map-link" href="https://maps.google.com/?q=Skogafoss" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">特色午餐</span> <strong>The Soup Company (維克鎮)：</strong> 品嚐熔岩牛肉湯。 <a class="map-link" href="https://maps.google.com/?q=The+Soup+Company+Vik" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">13:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Reynisfjara 玄武岩黑沙灘。</strong> <a class="map-link" href="https://maps.google.com/?q=Reynisfjara+Black+Sand+Beach" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">09:00</span> 🚗 退房出發沿一號公路向東駛去。</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 🌈 <strong>Skógafoss 彩虹瀑布。</strong> <a class="map-link" href="https://maps.google.com/?q=Skogafoss" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">特色午餐</span> 🥣 <strong>The Soup Company (維克鎮)：</strong> 品嚐熔岩牛肉湯。 <a class="map-link" href="https://maps.google.com/?q=The+Soup+Company+Vik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">13:30</span> <span class="tag tag-mustsee">必訪景點</span> 🌊 <strong>Reynisfjara 玄武岩黑沙灘。</strong> <a class="map-link" href="https://maps.google.com/?q=Reynisfjara+Black+Sand+Beach" target="_blank">📍 地圖</a></li>
                     <li><span class="time-tag">15:00</span> 🛒 <strong>補充物資：</strong> 於 Vik (Krónan) 補貨，Öræfi 周邊無超市！ <a class="map-link" href="https://maps.google.com/?q=Kronan+Vik" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">17:00</span> 入住 <strong>The Potato Storage</strong> 公寓。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:00</span> 🏡 入住 <strong>The Potato Storage</strong> 公寓。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a></li>
                     <li><span class="time-tag">19:00</span> 🍳 <strong>自煮晚餐：</strong> 平底鍋香煎冰島羊排。</li>
                 </ul>
                 <div class="hotel-box">
@@ -747,15 +788,18 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 10 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 10 天：10/20 (週二) — 瓦特納藍冰洞與冰川健行</span>
+                <span>第 10 天：10/20 (週二) — 瓦特納藍冰洞與冰川健行 🧊</span>
                 <span>Skaftafell 冰川區域 (車程: 30 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=800&q=80" alt="Ice Cave Iceland">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:15</span> 抵達 Arctic Adventures 斯卡夫塔費爾大本營，領取裝備。 <a class="map-link" href="https://maps.google.com/?q=Arctic+Adventures+Skaftafell" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">10:00</span> <span class="tag tag-booked">預訂行程</span> <strong>瓦特納藍冰洞與冰川健行 (Vatnajökull Ice Cave Hike - 4小時)。</strong></li>
-                    <li><span class="time-tag">14:30</span> 於大本營或 Freysnes 加油站享用午餐。 <a class="map-link" href="https://maps.google.com/?q=Freysnes+Gas+Station" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">16:00</span> 返回公寓休息，遠眺瓦特納冰川壯麗山景。</li>
+                    <li><span class="time-tag">09:15</span> 🥾 抵達 Arctic Adventures 斯卡夫塔費爾大本營，領取裝備。 <a class="map-link" href="https://maps.google.com/?q=Arctic+Adventures+Skaftafell" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">10:00</span> <span class="tag tag-booked">預訂行程</span> 🧊 <strong>瓦特納藍冰洞與冰川健行 (Vatnajökull Ice Cave Hike - 4小時)。</strong></li>
+                    <li><span class="time-tag">14:30</span> 🥪 於大本營或 Freysnes 加油站享用午餐。 <a class="map-link" href="https://maps.google.com/?q=Freysnes+Gas+Station" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> ☕ 返回公寓休息，遠眺瓦特納冰川壯麗山景。</li>
                     <li><span class="time-tag">18:30</span> 🍳 <strong>自煮晚餐：</strong> 熱高湯麵加入冰島甜蝦。</li>
                 </ul>
                 <div class="hotel-box">
@@ -767,17 +811,20 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 11 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 11 天：10/21 (週三) — 冰河湖 Zodiac 快艇與小龍蝦大餐</span>
+                <span>第 11 天：10/21 (週三) — 冰河湖 Zodiac 快艇與小龍蝦大餐 🦞</span>
                 <span>Öræfi → Jökulsárlón → Höfn → Öræfi (車程: 160 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=800&q=80" alt="Jokulsarlon Glacier Lagoon">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:15</span> 抵達 Jökulsárlón 冰河湖。 <a class="map-link" href="https://maps.google.com/?q=Jokulsarlon" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">11:00</span> <span class="tag tag-booked">預訂行程</span> <strong>Jökulsárlón 冰河湖 Zodiac 快艇導覽 (1小時15分)。</strong></li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>鑽石黑沙灘 (Diamond Beach)。</strong> <a class="map-link" href="https://maps.google.com/?q=Diamond+Beach+Iceland" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">15:00</span> 開車前往赫本鎮 (Höfn) 港口 (車程1小時)。 <a class="map-link" href="https://maps.google.com/?q=Hofn+Iceland" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">17:30</span> <span class="tag tag-food">頂級美食</span> <strong>Pakkhús Restaurant：</strong> 港邊必吃蒜烤小龍蝦。 <a class="map-link" href="https://maps.google.com/?q=Pakkhus+Restaurant" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">20:00</span> 驅車返回 Öræfi 民宿。</li>
+                    <li><span class="time-tag">10:15</span> 🧊 抵達 Jökulsárlón 冰河湖。 <a class="map-link" href="https://maps.google.com/?q=Jokulsarlon" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">11:00</span> <span class="tag tag-booked">預訂行程</span> 🛥️ <strong>Jökulsárlón 冰河湖 Zodiac 快艇導覽 (1小時15分)。</strong></li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-mustsee">必訪景點</span> 💎 <strong>鑽石黑沙灘 (Diamond Beach)。</strong> <a class="map-link" href="https://maps.google.com/?q=Diamond+Beach+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:00</span> 🚗 開車前往赫本鎮 (Höfn) 港口 (車程1小時)。 <a class="map-link" href="https://maps.google.com/?q=Hofn+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:30</span> <span class="tag tag-food">頂級美食</span> 🦞 <strong>Pakkhús Restaurant：</strong> 港邊必吃蒜烤小龍蝦。 <a class="map-link" href="https://maps.google.com/?q=Pakkhus+Restaurant" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">20:00</span> 🚗 驅車返回 Öræfi 民宿。</li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> The Potato Storage 國家公園景觀公寓 (第三晚)。 <a class="map-link" href="https://maps.google.com/?q=The+Potato+Storage+Iceland" target="_blank">📍 地圖</a>
@@ -788,15 +835,18 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 12 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 12 天：10/22 (週四) — 返程西行 & Fjöruborðið 龍蝦宴</span>
+                <span>第 12 天：10/22 (週四) — 返程西行 & Fjöruborðið 龍蝦宴 🦞</span>
                 <span>Öræfi → Stokkseyri → Selfoss (車程: 320 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=800&q=80" alt="Fjadrargljufur Canyon">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:00</span> 退房出發，沿一號公路折返。</li>
-                    <li><span class="time-tag">11:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羽毛峽谷 (Fjaðrárgljúfur Canyon)。</strong> <a class="map-link" href="https://maps.google.com/?q=Fjadrargljufur" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">15:30</span> 入住 Selfoss Airbnb，稍微休息。 <a class="map-link" href="https://maps.google.com/?q=Kelduland+5,+Selfoss" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-booked">預訂美食</span> <strong>Fjöruborðið 海鮮餐廳：</strong> 享用龍蝦湯與爆炒龍蝦尾。 <a class="map-link" href="https://maps.google.com/?q=Fjorubordid" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">09:00</span> 🚗 退房出發，沿一號公路折返。</li>
+                    <li><span class="time-tag">11:30</span> <span class="tag tag-mustsee">必訪景點</span> 🏞️ <strong>羽毛峽谷 (Fjaðrárgljúfur Canyon)。</strong> <a class="map-link" href="https://maps.google.com/?q=Fjadrargljufur" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">15:30</span> 🏡 入住 Selfoss Airbnb，稍微休息。 <a class="map-link" href="https://maps.google.com/?q=Kelduland+5,+Selfoss" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-booked">預訂美食</span> 🦞 <strong>Fjöruborðið 海鮮餐廳：</strong> 享用龍蝦湯與爆炒龍蝦尾。 <a class="map-link" href="https://maps.google.com/?q=Fjorubordid" target="_blank">📍 地圖</a></li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> Selfoss 鎮溫馨獨棟民宿。<br>
@@ -809,16 +859,19 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 13 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 13 天：10/23 (週五) — 藍湖地熱溫泉 & 機場飯店</span>
+                <span>第 13 天：10/23 (週五) — 藍湖地熱溫泉 & 機場飯店 ♨️</span>
                 <span>Selfoss → Blue Lagoon → KEF 機場 (車程: 110 km)</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=800&q=80" alt="Blue Lagoon Iceland">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> 退房驅車穿越雷克雅尼斯半島。</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">預訂放省</span> <strong>藍湖地熱溫泉 (Blue Lagoon Geothermal Spa)：</strong> 敷矽泥面膜，泡火山溫泉。 <a class="map-link" href="https://maps.google.com/?q=Blue+Lagoon+Iceland" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">16:00</span> 開車前往 KEF 機場，歸還 Blue Car Rental 租車。 <a class="map-link" href="https://maps.google.com/?q=Blue+Car+Rental+Keflavik" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">17:00</span> 入住 <strong>Aurora Hotel</strong> (距離機場航廈僅需步行 5 分鐘)。 <a class="map-link" href="https://maps.google.com/?q=Aurora+Hotel+Keflavik+Airport" target="_blank">📍 地圖</a></li>
-                    <li><span class="time-tag">18:30</span> 機場飯店享用晚餐，打包整理行李。</li>
+                    <li><span class="time-tag">09:30</span> 🚗 退房驅車穿越雷克雅尼斯半島。</li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">預訂放鬆</span> ♨️ <strong>藍湖地熱溫泉 (Blue Lagoon Geothermal Spa)：</strong> 敷矽泥面膜，泡火山溫泉。 <a class="map-link" href="https://maps.google.com/?q=Blue+Lagoon+Iceland" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">16:00</span> 🚗 開車前往 KEF 機場，歸還 Blue Car Rental 租車。 <a class="map-link" href="https://maps.google.com/?q=Blue+Car+Rental+Keflavik" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">17:00</span> 🏨 入住 <strong>Aurora Hotel</strong> (距離機場航廈僅需步行 5 分鐘)。 <a class="map-link" href="https://maps.google.com/?q=Aurora+Hotel+Keflavik+Airport" target="_blank">📍 地圖</a></li>
+                    <li><span class="time-tag">18:30</span> 🍽️ 機場飯店享用晚餐，打包整理行李。</li>
                 </ul>
                 <div class="hotel-box">
                     🏨 <strong>今日住宿 Highlights：</strong> 機場航廈極速步行飯店 (Aurora Hotel at Reykjavik-Keflavik Airport Terminal)，離機場僅 5 分鐘步程，便於隔天極早班機離境。<br>
@@ -830,21 +883,24 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 14 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 14 天：10/24 (週六) — 爸媽返台 (經倫敦轉機)</span>
+                <span>第 14 天：10/24 (週六) — 爸媽返台 (經倫敦轉機) ✈️</span>
                 <span>KEF → LHR → TPE</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" alt="Heathrow Transit">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">03:45</span> 步行 5 分鐘至 KEF 機場航廈。</li>
-                    <li><span class="time-tag">04:10</span> 協助爸媽辦理退稅 (Arion Bank 櫃檯)。</li>
-                    <li><span class="time-tag">04:40</span> 辦理登機與託運行李 (冰島航空 FI450)。</li>
-                    <li><span class="time-tag">05:10</span> 陪同至安檢口，將英文協助信交給爸媽。</li>
-                    <li><span class="time-tag">07:40</span> 爸媽搭乘 FI450 飛往倫敦希斯洛機場 (London Heathrow Airport - LHR T2)。</li>
-                    <li><span class="time-tag">11:55</span> 爸媽抵達倫敦 T2，前往 T3 轉機 (轉機時間9小時15分)。</li>
-                    <li><span class="time-tag">21:10</span> 爸媽搭乘華航 CI082 飛往台北。</li>
+                    <li><span class="time-tag">03:45</span> 🚶‍♂️ 步行 5 分鐘至 KEF 機場航廈。</li>
+                    <li><span class="time-tag">04:10</span> 🧾 協助爸媽辦理退稅 (Arion Bank 櫃檯)。</li>
+                    <li><span class="time-tag">04:40</span> 🧳 辦理登機與託運行李 (冰島航空 FI450)。</li>
+                    <li><span class="time-tag">05:10</span> ✉️ 陪同至安檢口，將英文協助信交給爸媽。</li>
+                    <li><span class="time-tag">07:40</span> 🛫 爸媽搭乘 FI450 飛往倫敦希斯洛機場 (London Heathrow Airport - LHR T2)。</li>
+                    <li><span class="time-tag">11:55</span> 🛬 爸媽抵達倫敦 T2，前往 T3 轉機 (轉機時間9小時15分)。</li>
+                    <li><span class="time-tag">21:10</span> 🛫 爸媽搭乘華航 CI082 飛往台北。</li>
                 </ul>
                 <div class="hotel-box">
-                    🏨 <strong>今日住宿 Highlights：</strong> 跨國高空航程機艙 (Icelandair FI450 & China Airlines CI082)。
+                    🏨 <strong>今日住宿 Highlights：</strong> ✈️ 跨國高空航程機艙 (Icelandair FI450 & China Airlines CI082)。
                 </div>
             </div>
         </div>
@@ -852,16 +908,19 @@ Best regards, Ya Wen Kuan</div>
         <!-- DAY 15 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>第 15 天：10/25 (週日) — 平安抵家</span>
+                <span>第 15 天：10/25 (週日) — 平安抵家 🎉</span>
                 <span>台北 & 都柏林</span>
+            </div>
+            <div class="day-image-container">
+                <img class="day-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Home Sweet Home">
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">07:40</span> 雅文搭乘晨班機返回都柏林。</li>
-                    <li><span class="time-tag">17:50</span> 爸媽順利抵達台北桃園機場 T1。旅程圓滿結束！ 🎉</li>
+                    <li><span class="time-tag">07:40</span> ✈️ 雅文搭乘晨班機返回都柏林。</li>
+                    <li><span class="time-tag">17:50</span> 🛬 爸媽順利抵達台北桃園機場 T1。旅程圓滿結束！ 🎉</li>
                 </ul>
                 <div class="hotel-box">
-                    🏨 <strong>今日住宿 Highlights：</strong> 台北溫馨的家。
+                    🏨 <strong>今日住宿 Highlights：</strong> 🏠 台北溫馨的家。
                 </div>
             </div>
         </div>
@@ -895,7 +954,8 @@ Best regards, Ya Wen Kuan</div>
         content.contentEditable = "false";
         document.getElementById('mainContainer').classList.remove('editing-active');
         
-        localStorage.setItem('savedItinerary_V5_Clean', content.innerHTML);
+        localStorage.clear();
+        localStorage.setItem('savedItinerary_V6_Images', content.innerHTML);
         
         document.getElementById('btnEdit').style.display = 'inline-block';
         document.getElementById('btnSave').style.display = 'none';
@@ -904,7 +964,7 @@ Best regards, Ya Wen Kuan</div>
     }
 
     window.onload = function() {
-        const saved = localStorage.getItem('savedItinerary_V5_Clean');
+        const saved = localStorage.getItem('savedItinerary_V6_Images');
         if (saved) {
             document.getElementById('itinerary-content').innerHTML = saved;
         }
