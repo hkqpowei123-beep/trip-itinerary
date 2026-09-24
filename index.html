@@ -1,131 +1,167 @@
-HTML
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Itinerary: Denmark & Iceland 15-Day Adventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>丹麥 & 冰島 15天家族冒險之旅</title>
     <style>
         :root {
             --dk-red: #C8102E;
-            --dk-red-light: #FFEBEE;
-            --dk-red-dark: #9A0B22;
+            --dk-red-light: #FFF0F2;
+            --dk-red-dark: #8B0A1E;
             --is-blue: #003897;
-            --is-blue-light: #E8F0FE;
-            --is-blue-dark: #00225C;
-            --accent-gold: #D4AF37;
-            --bg-gray: #F8F9FA;
-            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --is-blue-light: #EEF4FF;
+            --is-blue-dark: #001F52;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            --radius-lg: 16px;
+            --radius-sm: 10px;
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
             color: #2C3E50;
-            background-color: var(--bg-gray);
+            background-color: #F4F6F9;
             margin: 0;
-            padding: 20px;
+            padding: 12px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 600px;
             margin: 0 auto;
-            background: #FFFFFF;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
         }
 
-        .header-banner {
-            text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(135deg, var(--dk-red) 0%, var(--dk-red-dark) 45%, var(--is-blue) 55%, var(--is-blue-dark) 100%);
+        /* Hero Banner with Cutest Glass Lodge & Nyhavn Collage Effect */
+        .hero-banner {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
             color: white;
-            border-radius: 8px;
-            margin-bottom: 25px;
+            padding: 30px 20px 25px 20px;
+            text-align: center;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.85) 0%, rgba(0, 56, 151, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1504829857797-ddff29c27927?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .header-banner h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.2em;
-            letter-spacing: 1px;
-        }
-
-        .header-banner p {
-            margin: 0;
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        .notice-bar {
-            background-color: #FFF3CD;
-            border-left: 5px solid #FFC107;
-            padding: 12px 20px;
-            margin-bottom: 25px;
-            border-radius: 4px;
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
             font-weight: 600;
-            color: #856404;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-banner h1 {
+            margin: 4px 0 6px 0;
+            font-size: 1.75em;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-banner p {
+            margin: 0;
+            font-size: 0.95em;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Action Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 10px;
+        }
+
+        .notice-pill {
+            background-color: #FFF9E6;
+            border: 1px solid #FFE58F;
+            color: #8C6B00;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            flex-grow: 1;
+        }
+
+        .btn-save {
+            background: #27AE60;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85em;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+            white-space: nowrap;
         }
 
         .section-title {
-            font-size: 1.5em;
-            margin-top: 35px;
-            padding-bottom: 8px;
-            border-bottom: 3px solid #DDD;
+            font-size: 1.25em;
+            font-weight: 800;
+            margin: 24px 0 12px 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            padding-bottom: 6px;
+            border-bottom: 2.5px solid;
         }
 
         .title-dk { color: var(--dk-red); border-color: var(--dk-red); }
         .title-is { color: var(--is-blue); border-color: var(--is-blue); }
 
+        /* Card Styles optimized for mobile */
         .day-card {
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #E0E0E0;
-            background: #FFF;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            background: white;
+            border-radius: var(--radius-lg);
+            margin-bottom: 14px;
+            box-shadow: var(--card-shadow);
             overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .day-card.denmark { border-left: 6px solid var(--dk-red); }
-        .day-card.iceland { border-left: 6px solid var(--is-blue); }
+        .day-card.denmark { border-top: 5px solid var(--dk-red); }
+        .day-card.iceland { border-top: 5px solid var(--is-blue); }
 
         .day-header {
-            padding: 12px 20px;
+            padding: 12px 16px;
+            font-weight: 700;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: bold;
+            font-size: 0.95em;
         }
 
-        .denmark .day-header { background-color: var(--dk-red-light); color: var(--dk-red-dark); }
-        .iceland .day-header { background-color: var(--is-blue-light); color: var(--is-blue-dark); }
+        .denmark .day-header { background: var(--dk-red-light); color: var(--dk-red-dark); }
+        .iceland .day-header { background: var(--is-blue-light); color: var(--is-blue-dark); }
 
-        .day-body {
-            padding: 20px;
-        }
+        .day-body { padding: 14px 16px; }
 
-        .timeline {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .timeline { list-style: none; padding: 0; margin: 0; }
 
         .timeline li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.92em;
         }
 
         .timeline li::before {
             content: "•";
             position: absolute;
-            left: 5px;
-            font-size: 1.4em;
-            line-height: 1;
+            left: 2px;
+            font-size: 1.3em;
+            top: -2px;
         }
 
         .denmark .timeline li::before { color: var(--dk-red); }
@@ -133,172 +169,174 @@ HTML
 
         .time-tag {
             font-weight: 700;
-            display: inline-block;
-            min-width: 65px;
+            color: #4A5568;
+            margin-right: 4px;
         }
 
         .tag {
             display: inline-block;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: bold;
-            margin-left: 8px;
-            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-left: 4px;
         }
 
-        .tag-booked { background-color: #D4EDDA; color: #155724; border: 1px solid #C3E6CB; }
-        .tag-mustsee { background-color: #CCE5FF; color: #004085; border: 1px solid #B8DAFF; }
-        .tag-food { background-color: #FFF3CD; color: #856404; border: 1px solid #FFEEBA; }
+        .tag-booked { background: #E6F4EA; color: #137333; }
+        .tag-mustsee { background: #E8F0FE; color: #1A73E8; }
+        .tag-food { background: #FEF7E0; color: #B06000; }
 
         .meta-box {
-            background-color: #F1F3F5;
-            padding: 10px 15px;
-            border-radius: 6px;
-            margin-top: 12px;
-            font-size: 0.9em;
+            background-color: #F8F9FA;
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #5F6368;
+            border-left: 3px solid #CBD5E0;
         }
 
-        .meta-box strong { color: #495057; }
+        /* Table styling for mobile */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            font-size: 0.95em;
+            font-size: 0.82em;
+            background: white;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
         }
 
         th, td {
-            border: 1px solid #DEE2E6;
-            padding: 10px;
+            padding: 8px 10px;
+            border: 1px solid #EDF2F7;
             text-align: left;
+            white-space: nowrap;
         }
 
-        th { background-color: #E9ECEF; }
-
-        .dk-bg { background-color: var(--dk-red-light); }
-        .is-bg { background-color: var(--is-blue-light); }
-
-        .editable-help {
-            text-align: center;
-            font-size: 0.85em;
-            color: #6C757D;
-            margin-top: 5px;
-        }
+        th { background: #EDF2F7; font-weight: 700; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-banner">
-        <h1>🇩🇰 Denmark & 🇮🇸 Iceland Master Itinerary</h1>
-        <p>15-Day Family Adventure | 11 October – 25 October 2026</p>
+
+    <!-- Cute Hero Banner with Background Image -->
+    <div class="hero-banner">
+        <span class="hero-badge">✨ 15天家族夢幻之旅</span>
+        <h1>🇩🇰 丹麥與冰島 🇮🇸</h1>
+        <p>2026年10月11日 – 10月25日</p>
     </div>
 
-    <div class="notice-bar">
-        ✏️ <strong>Interactive Mode Enabled:</strong> You can edit any text directly on this page! Click on any activity, time, or note to adjust your schedule, then click "Save Changes" below.
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="notice-pill">💡 提示：可以直接點擊螢幕修改文字！</div>
+        <button class="btn-save" onclick="savePage()">💾 儲存修改</button>
     </div>
 
-    <div style="text-align: right; margin-bottom: 15px;">
-        <button onclick="savePage()" style="background: #28a745; color: white; border: none; padding: 10px 18px; border-radius: 5px; font-weight: bold; cursor: pointer;">💾 Save Changes</button>
-    </div>
-
-    <!-- MAIN CONTENT CONTAINER (EDITABLE) -->
+    <!-- EDITABLE CONTENT CONTAINER -->
     <div id="itinerary-content" contenteditable="true">
 
-        <!-- LOGISTICS OVERVIEW -->
-        <h2 class="section-title title-dk">📋 Key Trip Logistics & Pre-Bookings Overview</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Category</th>
-                    <th>Booking / Item</th>
-                    <th>Details / Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="dk-bg">
-                    <td>11 Oct (Sun)</td>
-                    <td>Flight</td>
-                    <td>CI073 (TPE → AMS)[cite: 2]</td>
-                    <td>22:50 → 07:40+1 (Parents)[cite: 2]</td>
-                </tr>
-                <tr class="dk-bg">
-                    <td>12 Oct (Mon)</td>
-                    <td>Flight</td>
-                    <td>SK552 (AMS → CPH)[cite: 2] / FR5070 (DUB → CPH)[cite: 2]</td>
-                    <td>Ya Wen lands 09:35[cite: 2]; Parents land 11:50[cite: 2]</td>
-                </tr>
-                <tr class="dk-bg">
-                    <td>16 Oct (Fri)</td>
-                    <td>Flight</td>
-                    <td>SK2595 (CPH → KEF)[cite: 2]</td>
-                    <td>15:25 → 16:45 (Full Family)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>17 Oct (Sat)</td>
-                    <td>Restaurant</td>
-                    <td>Old Iceland Restaurant[cite: 2]</td>
-                    <td>12:00 (Laugavegur 72, Reykjavík)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>18 Oct (Sun)</td>
-                    <td>Activity</td>
-                    <td>Sólhestar Horse Riding[cite: 2]</td>
-                    <td>13:30 (Reykjadalur Valley)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>20 Oct (Tue)</td>
-                    <td>Activity</td>
-                    <td>Blue Ice Cave & Glacier Hike[cite: 2]</td>
-                    <td>10:00 (Skaftafell Base Camp - 4 Hrs)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>21 Oct (Wed)</td>
-                    <td>Activity</td>
-                    <td>Jökulsárlón Zodiac Boat Tour[cite: 2]</td>
-                    <td>11:00 (Glacier Lagoon - 1.25 Hrs)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>21 Oct (Wed)</td>
-                    <td>Restaurant</td>
-                    <td>Pakkhús Restaurant (Höfn)[cite: 2]</td>
-                    <td>~18:00 (Walk-in for Langoustine)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>22 Oct (Thu)</td>
-                    <td>Restaurant</td>
-                    <td>Fjöruborðið Seafood[cite: 2]</td>
-                    <td>18:00 (Stokkseyri)[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>23 Oct (Fri)</td>
-                    <td>Relaxation</td>
-                    <td>Blue Lagoon Geothermal Spa[cite: 2]</td>
-                    <td>12:00 Slot[cite: 2]</td>
-                </tr>
-                <tr class="is-bg">
-                    <td>24 Oct (Sat)</td>
-                    <td>Flight</td>
-                    <td>FI450 (KEF → LHR)[cite: 2] / CI082 (LHR → TPE)[cite: 2]</td>
-                    <td>07:40 Departure (Parents return via London)[cite: 2]</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- OVERVIEW TABLE -->
+        <h2 class="section-title title-dk">📋 預訂行程與航班總覽</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>項目</th>
+                        <th>內容</th>
+                        <th>時間 / 備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10/11 (日)</td>
+                        <td>✈️ 航班</td>
+                        <td>華航 CI073 (台北 → 阿姆斯特丹)[cite: 2]</td>
+                        <td>22:50出發 (爸媽)[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/12 (一)</td>
+                        <td>✈️ 航班</td>
+                        <td>SAS SK552 / 瑞安航空 FR5070[cite: 2]</td>
+                        <td>雅文 09:35抵達；爸媽 11:50抵達哥本哈根[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/16 (五)</td>
+                        <td>✈️ 航班</td>
+                        <td>SAS SK2595 (哥本哈根 → 雷克雅維克)[cite: 2]</td>
+                        <td>15:25 → 16:45 (全家)[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/17 (六)</td>
+                        <td>🍽️ 美食</td>
+                        <td>Old Iceland Restaurant[cite: 2]</td>
+                        <td>12:00 已預訂 (雷克雅維克)[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/18 (日)</td>
+                        <td>🐎 體驗</td>
+                        <td>Sólhestar 冰島馬騎乘體驗[cite: 2]</td>
+                        <td>13:30 已預訂[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/20 (二)</td>
+                        <td>🧊 健行</td>
+                        <td>瓦特納藍冰洞與冰川健行 (4小時)[cite: 2]</td>
+                        <td>10:00 斯卡夫塔費爾大本營[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/21 (三)</td>
+                        <td>🛥️ 導覽</td>
+                        <td>Jökulsárlón 冰河湖 Zodiac 快艇[cite: 2]</td>
+                        <td>11:00 已預訂 (1小時15分)[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/21 (三)</td>
+                        <td>🦞 美食</td>
+                        <td>Pakkhús 蒜烤小龍蝦 (Höfn)[cite: 2]</td>
+                        <td>約 18:00 現場排隊[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/22 (四)</td>
+                        <td>🦞 美食</td>
+                        <td>Fjöruborðið 龍蝦湯名店[cite: 2]</td>
+                        <td>18:00 已預訂[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/23 (五)</td>
+                        <td>♨️ 溫泉</td>
+                        <td>藍湖地熱溫泉 (Blue Lagoon)[cite: 2]</td>
+                        <td>12:00 入場[cite: 2]</td>
+                    </tr>
+                    <tr>
+                        <td>10/24 (六)</td>
+                        <td>✈️ 航班</td>
+                        <td>FI450 (冰島 → 倫敦) / CI082 (倫敦 → 台北)[cite: 2]</td>
+                        <td>07:40 爸媽離境 (經倫敦轉機)[cite: 2]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- PHASE 1: DENMARK -->
-        <h2 class="section-title title-dk">🇩🇰 Phase 1: Copenhagen, Denmark (11–16 October)</h2>
+        <h2 class="section-title title-dk">🇩🇰 第一階段：丹麥哥本哈根 (10/11 - 10/16)</h2>
 
         <!-- DAY 1 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>DAY 1: Sunday, 11 October — Flight Departure</span>
-                <span>Taipei → Transit</span>
+                <span>第 1 天：10/11 (週日) — 啟程</span>
+                <span>台北 → 阿姆斯特丹</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">22:50</span> Parents depart Taipei Taoyuan Airport (T1) on China Airlines CI073 to Amsterdam[cite: 2].</li>
+                    <li><span class="time-tag">22:50</span> 爸媽從桃園機場 (T1) 搭乘華航 CI073 飛往阿姆斯特丹[cite: 2]。</li>
                 </ul>
             </div>
         </div>
@@ -306,20 +344,20 @@ HTML
         <!-- DAY 2 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>DAY 2: Monday, 12 October — Arrival & Nørrebro Base</span>
-                <span>Copenhagen</span>
+                <span>第 2 天：10/12 (週一) — 抵達哥本哈根</span>
+                <span>哥本哈根</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">07:40</span> Parents land in Amsterdam (AMS) for 2 hr 45 min transit[cite: 2].</li>
-                    <li><span class="time-tag">09:35</span> Ya Wen lands at Copenhagen Airport (CPH) on flight FR5070[cite: 2].</li>
-                    <li><span class="time-tag">11:50</span> Parents land at CPH Terminal 3 on flight SK552[cite: 2]. Rendezvous in Arrival Hall[cite: 2].</li>
-                    <li><span class="time-tag">13:00</span> Transit to Airbnb via Metro (M2 to Nørreport) or Taxi (Taxa 4x35)[cite: 2]. Drop luggage (Check-in 15:00)[cite: 2].</li>
-                    <li><span class="time-tag">15:30</span> <strong>First Exploration:</strong> Walk around the trendy Nørrebro neighborhood[cite: 2] and Torvehallerne Glass Market.</li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-food">RECOMMENDED DINNER</span> <strong>Hallernes Smørrebrød</strong> inside Torvehallerne for traditional Danish open-faced sandwiches[cite: 2].</li>
+                    <li><span class="time-tag">07:40</span> 爸媽抵達阿姆斯特丹 (AMS) 轉機 (2小時45分)[cite: 2]。</li>
+                    <li><span class="time-tag">09:35</span> 雅文搭乘 FR5070 率先抵達哥本哈根 (CPH)[cite: 2]。</li>
+                    <li><span class="time-tag">11:50</span> 爸媽搭乘 SK552 抵達哥本哈根 T3，於接機大廳會合[cite: 2]。</li>
+                    <li><span class="time-tag">13:00</span> 前往 Airbnb 寄放行李 (15:00可入住)[cite: 2]。可搭乘巴士 5C / 1A 至 Elmegade 站[cite: 2]。</li>
+                    <li><span class="time-tag">15:30</span> 輕鬆漫步於 Nørrebro 文青區及 Torvehallerne 玻璃市場[cite: 2]。</li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-food">推薦美食</span> <strong>Hallernes Smørrebrød</strong> 享用經典丹麥開放式三明治[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> Nørrebrogade 13, 2200 Copenhagen (2nd floor)[cite: 2].
+                    🏡 <strong>住宿：</strong> Nørrebrogade 13, 2200 Copenhagen (2樓)[cite: 2]。
                 </div>
             </div>
         </div>
@@ -327,17 +365,17 @@ HTML
         <!-- DAY 3 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>DAY 3: Tuesday, 13 October — Classic Copenhagen Must-Sees</span>
-                <span>Copenhagen</span>
+                <span>第 3 天：10/13 (週二) — 經典地標巡禮</span>
+                <span>哥本哈根</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Nyhavn Canal:</strong> Explore the iconic colorful harbor houses and historic wooden ships.</li>
-                    <li><span class="time-tag">10:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Classic Canal Tour:</strong> 1-hour boat cruise departing from Nyhavn through Copenhagen's harbor and canals.</li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">RECOMMENDED LUNCH</span> <strong>Café Atelier September:</strong> Famous stylish local café known for whipped ricotta toast and exceptional coffee.</li>
-                    <li><span class="time-tag">14:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Amalienborg Palace & Marble Church:</strong> See the royal winter residence and the impressive dome.</li>
-                    <li><span class="time-tag">16:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>The Round Tower (Rundetårn):</strong> Climb the spiral ramp for 360° panoramic views of the city center. Grab a snack at <em>Døp Organic Hotdogs</em> right next door[cite: 2].</li>
-                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">RECOMMENDED DINNER</span> <strong>Höst:</strong> Exceptional New Nordic restaurant featuring Nordic wood aesthetics and seasonal local produce[cite: 2].</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>新港 (Nyhavn)：</strong> 打卡經典彩色房子與木造運河船。</li>
+                    <li><span class="time-tag">10:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>運河遊船 (Canal Tour)：</strong> 從新港出發，搭船欣賞哥本哈根水上風光。</li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">推薦午餐</span> <strong>Café Atelier September：</strong> 知名極簡風咖啡館，招牌瑞可塔起司吐司。</li>
+                    <li><span class="time-tag">14:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>阿馬林堡宮 & 大理石教堂：</strong> 參觀丹麥王室冬宮。</li>
+                    <li><span class="time-tag">16:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>圓塔 (Rundetårn)：</strong> 沿著螺旋坡道登上塔頂俯瞰市景。旁邊可買 Døp 有機熱狗攤[cite: 2]。</li>
+                    <li><span class="time-tag">19:00</span> <span class="tag tag-food">高級餐廳</span> <strong>Höst：</strong> 榮獲設計大獎的新北歐料理，氣氛溫馨[cite: 2]。</li>
                 </ul>
             </div>
         </div>
@@ -345,16 +383,16 @@ HTML
         <!-- DAY 4 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>DAY 4: Wednesday, 14 October — Castles, Gardens & Hygge</span>
-                <span>Copenhagen</span>
+                <span>第 4 天：10/14 (週三) — 城堡與皇家花園</span>
+                <span>哥本哈根</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Rosenborg Castle & King’s Garden:</strong> View the Danish Crown Jewels inside the Renaissance castle.</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-food">RECOMMENDED LUNCH</span> <strong>Aamanns Replik:</strong> High-end contemporary Smørrebrød located near the Royal Theatre.</li>
-                    <li><span class="time-tag">14:00</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>The Little Mermaid & Kastellet:</strong> Walk through the star-shaped fortress to see Denmark's most famous statue.</li>
-                    <li><span class="time-tag">16:30</span> <span class="tag tag-food">CAFÉ STOP</span> <strong>Democratic Bakehouse:</strong> Taste the absolute best almond croissants and fresh filter coffee in Copenhagen.</li>
-                    <li><span class="time-tag">18:30</span> <strong>Family Self-Catering Evening:</strong> Pick up fresh fish and Danish butter from Netto/Irma[cite: 2] and cook a cozy meal at the apartment[cite: 2].</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羅森堡城堡 (Rosenborg Castle)：</strong> 參觀皇室花園與地下皇冠寶物。</li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-food">推薦午餐</span> <strong>Aamanns Replik：</strong> 精緻新式丹麥開放三明治。</li>
+                    <li><span class="time-tag">14:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>小美人魚像 & 五角星堡壘 (Kastellet)：</strong> 沿著港灣散步地標。</li>
+                    <li><span class="time-tag">16:30</span> <span class="tag tag-food">咖啡下午茶</span> <strong>Democratic Bakehouse：</strong> 品嚐全哥本哈根最讚的杏仁可頌。</li>
+                    <li><span class="time-tag">18:30</span> 🏡 <strong>溫馨自煮：</strong> 於超市購買食材，在民宿開煮溫暖晚餐[cite: 2]。</li>
                 </ul>
             </div>
         </div>
@@ -362,40 +400,40 @@ HTML
         <!-- DAY 5 -->
         <div class="day-card denmark">
             <div class="day-header">
-                <span>DAY 5: Thursday, 15 October — Art & Historic Tivoli</span>
-                <span>Copenhagen</span>
+                <span>第 5 天：10/15 (週四) — 藝文與蒂沃利樂園</span>
+                <span>哥本哈根</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:00</span> <strong>Day Excursion Option:</strong> Take a 35-minute coastal train north to <strong>Louisiana Museum of Modern Art</strong> (world-class seaside sculpture park).</li>
-                    <li><span class="time-tag">13:00</span> <span class="tag tag-food">RECOMMENDED LUNCH</span> <strong>Torvehallerne Food Hall:</strong> Try <em>Æbleskiver</em> (warm pancake balls)[cite: 2] and fresh juice.</li>
-                    <li><span class="time-tag">15:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Christiansborg Palace:</strong> Visit the Danish Parliament, Royal Reception Rooms, and the free tower view.</li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Tivoli Gardens:</strong> Explore the world’s second-oldest amusement park, beautifully illuminated with autumn lights.</li>
+                    <li><span class="time-tag">10:00</span> <strong>藝文選擇：</strong> 搭乘火車 35 分鐘前往路易斯安那現代藝術館 (Louisiana Museum)。</li>
+                    <li><span class="time-tag">13:00</span> <span class="tag tag-food">在地特色</span> <strong>Torvehallerne 市場：</strong> 品嚐熱騰騰的丹麥鬆餅球 (Æbleskiver)[cite: 2]。</li>
+                    <li><span class="time-tag">15:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>克里斯蒂安堡宮 (Christiansborg Palace)：</strong> 丹麥議會所在地與免費瞭望塔。</li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>蒂沃利花園 (Tivoli Gardens)：</strong> 漫步全球第二古老的夢幻主題樂園夜景。</li>
                 </ul>
             </div>
         </div>
 
         <!-- PHASE 2: ICELAND -->
-        <h2 class="section-title title-is">🇮🇸 Phase 2: Iceland South Coast Driving Tour (16–25 October)</h2>
+        <h2 class="section-title title-is">🇮🇸 第二階段：冰島自駕冒險 (10/16 - 10/25)</h2>
 
         <!-- DAY 6 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 6: Friday, 16 October — Flight to Iceland & Arrival</span>
-                <span>CPH → KEF → Reykjavík (Drive: 50 km / 45 mins)</span>
+                <span>第 6 天：10/16 (週五) — 飛往冰島 & 首都基地的第一天</span>
+                <span>CPH → KEF → 雷克雅維克 (車程: 50 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">12:30</span> Arrive at CPH Airport T3 for flight SAS SK2595[cite: 2].</li>
-                    <li><span class="time-tag">15:25</span> Fly Copenhagen (CPH) → Iceland Keflavík (KEF)[cite: 2].</li>
-                    <li><span class="time-tag">16:45</span> Land at KEF Airport[cite: 2]. Clear customs and collect luggage.</li>
-                    <li><span class="time-tag">17:30</span> <strong>Car Rental Pickup:</strong> Collect 4x4 vehicle from <em>Blue Car Rental</em>[cite: 2].</li>
-                    <li><span class="time-tag">18:00</span> 🛒 <strong>CRITICAL Grocery Stop:</strong> Stock up at <strong>Bónus Supermarket</strong> near KEF airport (Buy geothermal cucumbers, mini peppers, Skyr yogurts, butter, snacks)[cite: 2].</li>
-                    <li><span class="time-tag">19:30</span> Check into Reykjavík Airbnb[cite: 2]. Relaxed casual evening in the capital city.</li>
+                    <li><span class="time-tag">12:30</span> 抵達哥本哈根 T3 機場[cite: 2]。</li>
+                    <li><span class="time-tag">15:25</span> 全家搭乘 SAS SK2595 飛往冰島雷克雅維克 (KEF)[cite: 2]。</li>
+                    <li><span class="time-tag">16:45</span> 抵達 KEF 機場，辦理入境與提領行李[cite: 2]。</li>
+                    <li><span class="time-tag">17:30</span> <strong>取車：</strong> 提領 Blue Car Rental 四輪傳動租車[cite: 2]。</li>
+                    <li><span class="time-tag">18:00</span> 🛒 <strong>重要採買：</strong> 衝一趟小豬超市 (Bónus)，買齊黃瓜、彩椒、Skyr優格與奶油[cite: 2]。</li>
+                    <li><span class="time-tag">19:30</span> 入住雷克雅維克 Airbnb，休息整備[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> Sörlaskjól 12, 107 Reykjavík[cite: 2].<br>
-                    <strong>🚗 Driving:</strong> 50 km (Keflavík Airport to Reykjavík Center).
+                    🏡 <strong>住宿：</strong> Sörlaskjól 12, 107 Reykjavík[cite: 2]。<br>
+                    🚗 <strong>車程：</strong> 約 50 公里 (45 分鐘)。
                 </div>
             </div>
         </div>
@@ -403,20 +441,20 @@ HTML
         <!-- DAY 7 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 7: Saturday, 17 October — Capital Sights & Journey to Glass Lodge</span>
-                <span>Reykjavík → Seljalandsfoss → Hella (Drive: 120 km / 1 hr 40 mins)</span>
+                <span>第 7 天：10/17 (週六) — 市區漫步 & 極光玻璃屋 Check-in</span>
+                <span>雷克雅維克 → Hella (車程: 120 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">MUST SEE</span> Walk through downtown Reykjavík: See <strong>Hallgrímskirkja Church</strong> and the <strong>Harpa Concert Hall</strong> waterfront.</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">PRE-BOOKED DINING</span> <strong>Old Iceland Restaurant:</strong> Reserved lunch slot![cite: 2] Excellent traditional fish and lamb (Laugavegur 72)[cite: 2].</li>
-                    <li><span class="time-tag">14:00</span> Drive South along Route 1 toward Hella[cite: 2]. Optional stop at <em>Raufarhólshellir Lava Tunnel</em> or <em>Kerið Crater</em>[cite: 2].</li>
-                    <li><span class="time-tag">16:00</span> <span class="tag tag-booked">HIGHLIGHT STAY</span> Check into <strong>Panorama Glass Lodge</strong> (Alva / Room 1 & 2)[cite: 2].</li>
-                    <li><span class="time-tag">18:00</span> Enjoy the glass ceiling views, private hot tub, and shared sauna session[cite: 2]. Nighttime Northern Lights hunting from bed!</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> 雷克雅維克市區：哈爾格林姆教堂與 Harpa 音樂廳。</li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">已預訂美食</span> <strong>Old Iceland Restaurant：</strong> 享用傳統冰島鮮魚與羊肉湯[cite: 2]。</li>
+                    <li><span class="time-tag">14:00</span> 沿 1 號環島公路南下前往 Hella[cite: 2]。途經 Seljalandsfoss 水簾洞瀑布。</li>
+                    <li><span class="time-tag">16:00</span> <span class="tag tag-booked">夢幻住宿</span> 入住 <strong>Panorama Glass Lodge</strong> (Alva / Room 1 & 2)[cite: 2]。</li>
+                    <li><span class="time-tag">18:00</span> 享受專屬三溫暖與熱水按摩池，躺在床上等待夜間極光！[cite: 2]</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> Panorama Glass Lodge, Austurkrókur 1, 851 Hella[cite: 2].<br>
-                    <strong>🚗 Driving:</strong> 120 km total driving time.
+                    🏡 <strong>住宿：</strong> Panorama Glass Lodge, Austurkrókur 1, 851 Hella[cite: 2]。<br>
+                    🚗 <strong>車程：</strong> 約 120 公里 (1小時40分鐘)。
                 </div>
             </div>
         </div>
@@ -424,19 +462,19 @@ HTML
         <!-- DAY 8 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 8: Sunday, 18 October — Horse Riding & Geothermal Greenhouse</span>
-                <span>Hella & Golden Circle Region (Drive: 90 km / 1 hr 15 mins)</span>
+                <span>第 8 天：10/18 (週日) — 冰島馬騎乘 & 地熱溫室</span>
+                <span>Hella & 金圈區域 (車程: 90 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:00</span> Morning coffee in the glass lodge[cite: 2]. Drive toward Reykjadalur[cite: 2].</li>
-                    <li><span class="time-tag">11:30</span> <span class="tag tag-food">RECOMMENDED LUNCH</span> <strong>Friðheimar Tomato Farm:</strong> Dine inside a warm geothermal tomato greenhouse! Famous all-you-can-eat tomato soup and fresh sourdough bread[cite: 2].</li>
-                    <li><span class="time-tag">13:30</span> <span class="tag tag-booked">PRE-BOOKED TOUR</span> <strong>Sólhestar Horse Riding:</strong> 1.5-hour Icelandic horse riding experience through Reykjadalur Valley[cite: 2].</li>
-                    <li><span class="time-tag">16:00</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Geysir Geothermal Area & Gullfoss Waterfall:</strong> Watch Strokkur erupt every 6-10 minutes.</li>
-                    <li><span class="time-tag">18:30</span> Return to Panorama Glass Lodge for second luxury night[cite: 2]. Cook lighter self-catering dinner[cite: 2].</li>
+                    <li><span class="time-tag">10:00</span> 玻璃屋悠閒早餐，出發前往 Reykjadalur[cite: 2]。</li>
+                    <li><span class="time-tag">11:30</span> <span class="tag tag-food">特色美食</span> <strong>Friðheimar 番茄農場餐廳：</strong> 溫室內享用無限量番茄湯與新鮮手工麵包[cite: 2]。</li>
+                    <li><span class="time-tag">13:30</span> <span class="tag tag-booked">已預訂行程</span> <strong>Sólhestar 冰島馬體驗：</strong> 騎乘可愛溫順的冰島馬穿越山谷[cite: 2]。</li>
+                    <li><span class="time-tag">16:00</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Geysir 間歇泉 & Gullfoss 黃金瀑布：</strong> 見證幾分鐘噴發一次的自然奇觀。</li>
+                    <li><span class="time-tag">18:30</span> 返回玻璃屋享受第二晚奢華夜景[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> Panorama Glass Lodge, Hella[cite: 2].
+                    🏡 <strong>住宿：</strong> Panorama Glass Lodge, Hella[cite: 2]。
                 </div>
             </div>
         </div>
@@ -444,22 +482,22 @@ HTML
         <!-- DAY 9 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 9: Monday, 19 October — Waterfalls, Black Sands & Journey East</span>
-                <span>Hella → Vik → Öræfi (Drive: 270 km / 3 hrs 30 mins)</span>
+                <span>第 9 天：10/19 (週一) — 南岸瀑布、黑沙灘與東移之旅</span>
+                <span>Hella → Vik → Öræfi (車程: 270 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:00</span> Check out of Hella[cite: 2]. Drive East along Ring Road 1[cite: 2].</li>
-                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Seljalandsfoss & Skógafoss:</strong> Walk behind Seljalandsfoss and admire the massive power of Skógafoss.</li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">RECOMMENDED LUNCH</span> <strong>The Soup Company (Vik):</strong> Try their famous signature <em>Red Lava Soup</em> served in a dark sourdough bowl[cite: 2].</li>
-                    <li><span class="time-tag">13:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Reynisfjara Black Sand Beach:</strong> View basalt columns and roaring Atlantic waves (Stay far from water edge!).</li>
-                    <li><span class="time-tag">15:00</span> 🛒 <strong>Grocery Refresh:</strong> Stop at <em>Krónan Vik</em> or <em>Gvendarkjör (Kirkjubæjarklaustur)</em> for supplies as Öræfi has no local supermarket![cite: 2]</li>
-                    <li><span class="time-tag">17:00</span> Check into <strong>The Potato Storage</strong> in Öræfi[cite: 2].</li>
-                    <li><span class="time-tag">19:00</span> 🍳 <strong>Family Self-Catering:</strong> Pan-fry fresh Icelandic lamb chops with herbs in the apartment[cite: 2].</li>
+                    <li><span class="time-tag">09:00</span> 退房出發，沿一號公路向東駛去[cite: 2]。</li>
+                    <li><span class="time-tag">09:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Skógafoss 彩虹瀑布：</strong> 感受磅礴水氣與壯麗景緻。</li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-food">特色午餐</span> <strong>The Soup Company (維克鎮)：</strong> 品嚐盛裝在黑色麵包碗裡的熔岩牛肉湯[cite: 2]。</li>
+                    <li><span class="time-tag">13:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>Reynisfjara 玄武岩黑沙灘：</strong> 欣賞玄武岩柱群與玄武岩海蝕柱。</li>
+                    <li><span class="time-tag">15:00</span> 🛒 <strong>補充物資：</strong> 於 Vik (Krónan) 或教堂鎮補貨，Öræfi 周邊無超市[cite: 2]！</li>
+                    <li><span class="time-tag">17:00</span> 入住 <strong>The Potato Storage</strong> 公寓[cite: 2]。</li>
+                    <li><span class="time-tag">19:00</span> 🍳 <strong>自煮晚餐：</strong> 平底鍋香煎冰島煎羊排[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> The Potato Storage, Svínafell 1, Langatorfa, 785 Öræfi[cite: 2].<br>
-                    <strong>🚗 Driving:</strong> 270 km scenic drive across mossy lava fields and south glaciers.
+                    🏡 <strong>住宿：</strong> The Potato Storage, Svínafell 1, Langatorfa, 785 Öræfi[cite: 2]。<br>
+                    🚗 <strong>車程：</strong> 約 270 公里 (3.5小時)。
                 </div>
             </div>
         </div>
@@ -467,19 +505,19 @@ HTML
         <!-- DAY 10 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 10: Tuesday, 20 October — Blue Ice Cave & Vatnajökull Glacier</span>
-                <span>Skaftafell & Glacier Area (Drive: 30 km / 25 mins)</span>
+                <span>第 10 天：10/20 (週二) — 瓦特納藍冰洞與冰川健行</span>
+                <span>Skaftafell 冰川區域 (車程: 30 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:15</span> Arrive at <em>Skaftafell Base Camp (Arctic Adventures Hut)</em>[cite: 2]. Gear up with crampons, helmets, & axes[cite: 2].</li>
-                    <li><span class="time-tag">10:00</span> <span class="tag tag-booked">PRE-BOOKED TOUR</span> <strong>Blue Ice Cave & Glacier Hike (4 Hours):</strong> Super-Jeep ride onto Falljökull glacier and exploration of vibrant natural blue ice caves[cite: 2].</li>
-                    <li><span class="time-tag">14:30</span> Late lunch/snack at Skaftafell Visitor Centre / Freysnes station[cite: 2].</li>
-                    <li><span class="time-tag">16:00</span> Rest and unwind at The Potato Storage apartment[cite: 2]. Enjoy spectacular views of Vatnajökull mountains from the terrace[cite: 2].</li>
-                    <li><span class="time-tag">18:30</span> 🍳 <strong>Family Self-Catering:</strong> Hot noodle soup elevated with fresh Icelandic sweet shrimp[cite: 2].</li>
+                    <li><span class="time-tag">09:15</span> 抵達 Arctic Adventures 斯卡夫塔費爾大本營，領取裝備[cite: 2]。</li>
+                    <li><span class="time-tag">10:00</span> <span class="tag tag-booked">已預訂行程</span> <strong>藍冰洞與冰川健行 (4小時)：</strong> 越野車接駁，走入天然夢幻藍冰洞[cite: 2]。</li>
+                    <li><span class="time-tag">14:30</span> 於大本營或 Freysnes 加油站簡單享用午餐[cite: 2]。</li>
+                    <li><span class="time-tag">16:00</span> 返回公寓休息，遠眺瓦特納冰川壯麗山景[cite: 2]。</li>
+                    <li><span class="time-tag">18:30</span> 🍳 <strong>自煮晚餐：</strong> 熱騰騰的高湯麵條加入冰島甜蝦[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> The Potato Storage, Öræfi[cite: 2].
+                    🏡 <strong>住宿：</strong> The Potato Storage, Öræfi[cite: 2]。
                 </div>
             </div>
         </div>
@@ -487,20 +525,20 @@ HTML
         <!-- DAY 11 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 11: Wednesday, 21 October — Zodiac Lagoon Cruise & Langoustine Feast</span>
-                <span>Öræfi → Jökulsárlón → Höfn → Öræfi (Drive: 160 km / 2 hrs total)</span>
+                <span>第 11 天：10/21 (週三) — 冰河湖 Zodiac 快艇與小龍蝦大餐</span>
+                <span>Öræfi → Jökulsárlón → Höfn → Öræfi (車程: 160 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">10:15</span> Arrive at Jökulsárlón Glacier Lagoon park.</li>
-                    <li><span class="time-tag">11:00</span> <span class="tag tag-booked">PRE-BOOKED TOUR</span> <strong>Jökulsárlón Zodiac Boat Tour (1 hr 15 min):</strong> High-speed boat ride right up to floating icebergs and glacier face[cite: 2].</li>
-                    <li><span class="time-tag">12:30</span> <span class="tag tag-mustsee">MUST SEE</span> <strong>Diamond Beach:</strong> Walk across the highway to watch translucent ice chunks sparkle on black sand.</li>
-                    <li><span class="time-tag">15:00</span> Drive East to the harbor town of Höfn (1 hr drive).</li>
-                    <li><span class="time-tag">17:30</span> <span class="tag tag-food">RECOMMENDED DINNER</span> <strong>Pakkhús Restaurant:</strong> Famous harbor-side warehouse restaurant serving unbeatable garlic-baked Icelandic langoustines (lobster tails)[cite: 2]. <em>No reservations taken; early walk-in highly recommended!</em>[cite: 2]</li>
-                    <li><span class="time-tag">20:00</span> Drive back to Öræfi for final night[cite: 2].</li>
+                    <li><span class="time-tag">10:15</span> 抵達 Jökulsárlón 冰河湖。</li>
+                    <li><span class="time-tag">11:00</span> <span class="tag tag-booked">已預訂行程</span> <strong>Zodiac 快艇導覽 (1小時15分)：</strong> 穿梭於巨型浮冰間[cite: 2]。</li>
+                    <li><span class="time-tag">12:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>鑽石黑沙灘 (Diamond Beach)：</strong> 欣賞岸邊如鑽石般閃耀的冰塊。</li>
+                    <li><span class="time-tag">15:00</span> 開車前往赫本鎮 (Höfn) 港口 (車程1小時)。</li>
+                    <li><span class="time-tag">17:30</span> <span class="tag tag-food">頂級美食</span> <strong>Pakkhús Restaurant：</strong> 港邊舊倉庫餐廳，必吃蒜烤冰島小龍蝦[cite: 2]。</li>
+                    <li><span class="time-tag">20:00</span> 驅車返回 Öræfi 民宿[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> The Potato Storage, Öræfi[cite: 2].
+                    🏡 <strong>住宿：</strong> The Potato Storage, Öræfi[cite: 2]。
                 </div>
             </div>
         </div>
@@ -508,20 +546,19 @@ HTML
         <!-- DAY 12 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 12: Thursday, 22 October — Westward Return & Feast at Fjöruborðið</span>
-                <span>Öræfi → Stokkseyri → Selfoss (Drive: 320 km / 4 hrs)</span>
+                <span>第 12 天：10/22 (週四) — 返程西行 & Fjöruborðið 龍蝦宴</span>
+                <span>Öræfi → Stokkseyri → Selfoss (車程: 320 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:00</span> Check out of Öræfi[cite: 2]. Begin driving West back along the South Coast.</li>
-                    <li><span class="time-tag">11:30</span> <span class="tag tag-mustsee">MUST SEE</span> Stop at <strong>Fjaðrárgljúfur Canyon:</strong> Walk along the dramatic serpentine river canyon trail.</li>
-                    <li><span class="time-tag">13:30</span> Light lunch stop in Kirkjubæjarklaustur or Vik.</li>
-                    <li><span class="time-tag">15:30</span> Check into Selfoss Airbnb[cite: 2]. Short rest after the long drive.</li>
-                    <li><span class="time-tag">18:00</span> <span class="tag tag-booked">PRE-BOOKED DINING</span> <strong>Fjöruborðið Seafood Restaurant:</strong> Reserved dinner slot![cite: 2] Famous coastal restaurant serving iconic lobster soup and sizzling garlic butter prawns in Stokkseyri[cite: 2].</li>
+                    <li><span class="time-tag">09:00</span> 退房出發，沿一號公路一路向西折返[cite: 2]。</li>
+                    <li><span class="time-tag">11:30</span> <span class="tag tag-mustsee">必訪景點</span> <strong>羽毛峽谷 (Fjaðrárgljúfur Canyon)：</strong> 沿著蜿蜒壯麗的綠色峽谷步道漫步。</li>
+                    <li><span class="time-tag">15:30</span> 入住 Selfoss Airbnb，稍微休息[cite: 2]。</li>
+                    <li><span class="time-tag">18:00</span> <span class="tag tag-booked">已預訂美食</span> <strong>Fjöruborðið 海鮮餐廳：</strong> 享用名揚冰島的蒜香龍蝦湯與爆炒龍蝦尾[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> Kelduland 5, 800 Selfoss[cite: 2].<br>
-                    <strong>🚗 Driving:</strong> 320 km return drive along Ring Road 1.
+                    🏡 <strong>住宿：</strong> Kelduland 5, 800 Selfoss[cite: 2]。<br>
+                    🚗 <strong>車程：</strong> 約 320 公里 (4小時)。
                 </div>
             </div>
         </div>
@@ -529,19 +566,19 @@ HTML
         <!-- DAY 13 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 13: Friday, 23 October — Blue Lagoon Spa & Airport Hotel Base</span>
-                <span>Selfoss → Blue Lagoon → KEF Airport (Drive: 110 km / 1 hr 30 mins)</span>
+                <span>第 13 天：10/23 (週五) — 藍湖地熱溫泉 & 機場飯店</span>
+                <span>Selfoss → Blue Lagoon → KEF 機場 (車程: 110 km)</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">09:30</span> Relaxed morning check-out from Selfoss[cite: 2]. Drive across Reykjanes Peninsula.</li>
-                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">PRE-BOOKED RELAXATION</span> <strong>Blue Lagoon Geothermal Spa:</strong> Reserved entrance![cite: 2] Soak in milky blue mineral waters, silica mud masks, and geothermal sauna[cite: 2].</li>
-                    <li><span class="time-tag">16:00</span> Drive 15 mins to Keflavík Airport[cite: 2]. Return rental car to Blue Car Rental[cite: 2].</li>
-                    <li><span class="time-tag">17:00</span> Check into <strong>Aurora Hotel KEF Airport Terminal</strong> (5-minute walk to terminal)[cite: 2].</li>
-                    <li><span class="time-tag">18:30</span> Early family dinner at hotel restaurant or nearby airport café. Organize luggage for early departure[cite: 2].</li>
+                    <li><span class="time-tag">09:30</span> 退房驅車穿越雷克雅尼斯半島。</li>
+                    <li><span class="time-tag">12:00</span> <span class="tag tag-booked">已預訂放鬆</span> <strong>藍湖地熱溫泉 (Blue Lagoon)：</strong> 敷矽泥面膜，泡火山地熱藍泉[cite: 2]。</li>
+                    <li><span class="time-tag">16:00</span> 開車前往 KEF 機場，辦理 Blue Car Rental 歸還租車[cite: 2]。</li>
+                    <li><span class="time-tag">17:00</span> 入住 <strong>Aurora Hotel</strong> (距離機場航廈步行僅需 5 分鐘)[cite: 2]。</li>
+                    <li><span class="time-tag">18:30</span> 機場飯店享用晚餐，打包整理行李[cite: 2]。</li>
                 </ul>
                 <div class="meta-box">
-                    <strong>🏡 Stay:</strong> Aurora Hotel at Reykjavik-Keflavik Airport Terminal, Blikavöllur 2, Keflavík[cite: 2].
+                    🏡 <strong>住宿：</strong> Aurora Hotel at Reykjavik-Keflavik Airport Terminal[cite: 2]。
                 </div>
             </div>
         </div>
@@ -549,18 +586,18 @@ HTML
         <!-- DAY 14 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 14: Saturday, 24 October — Parents Return Flight via London</span>
+                <span>第 14 天：10/24 (週六) — 爸媽返台 (經倫敦轉機)</span>
                 <span>KEF → LHR → TPE</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">03:45</span> Walk 5 minutes from Aurora Hotel to KEF Airport Terminal departure hall[cite: 2].</li>
-                    <li><span class="time-tag">04:10</span> Complete Tax Refund processing at Arion Bank counter / machine[cite: 2].</li>
-                    <li><span class="time-tag">04:40</span> Airport check-in and baggage drop for parents (Icelandair FI450)[cite: 2].</li>
-                    <li><span class="time-tag">05:10</span> Escort parents to Security Gate; hand them their English assistance letter[cite: 2].</li>
-                    <li><span class="time-tag">07:40</span> Parents depart KEF on Icelandair FI450 to London Heathrow (LHR T2)[cite: 2].</li>
-                    <li><span class="time-tag">11:55</span> Parents land at Heathrow Terminal 2[cite: 2]. Follow purple <em>Flight Connections</em> signs to transfer to Terminal 3 (9 hr 15 min transit)[cite: 2].</li>
-                    <li><span class="time-tag">21:10</span> Parents depart London Heathrow (T3) on China Airlines CI082 to Taipei[cite: 2].</li>
+                    <li><span class="time-tag">03:45</span> 步行 5 分鐘至 KEF 機場航廈[cite: 2]。</li>
+                    <li><span class="time-tag">04:10</span> 協助爸媽辦理退稅 (Arion Bank 櫃檯)[cite: 2]。</li>
+                    <li><span class="time-tag">04:40</span> 辦理登機與託運行李 (冰島航空 FI450)[cite: 2]。</li>
+                    <li><span class="time-tag">05:10</span> 陪同至安檢口，將英文協助信交給爸媽[cite: 2]。</li>
+                    <li><span class="time-tag">07:40</span> 爸媽搭乘 FI450 飛往倫敦希斯洛機場 (T2)[cite: 2]。</li>
+                    <li><span class="time-tag">11:55</span> 爸媽抵達倫敦 T2，跟隨紫色指標前往 T3 轉機 (轉機時間9小時15分)[cite: 2]。</li>
+                    <li><span class="time-tag">21:10</span> 爸媽搭乘華航 CI082 飛往台北[cite: 2]。</li>
                 </ul>
             </div>
         </div>
@@ -568,13 +605,13 @@ HTML
         <!-- DAY 15 -->
         <div class="day-card iceland">
             <div class="day-header">
-                <span>DAY 15: Sunday, 25 October — Safe Arrival Home</span>
-                <span>Taipei & Dublin Flight</span>
+                <span>第 15 天：10/25 (週日) — 平安抵家</span>
+                <span>台北 & 都柏林</span>
             </div>
             <div class="day-body">
                 <ul class="timeline">
-                    <li><span class="time-tag">07:40</span> Ya Wen departs KEF on morning flight back to Dublin[cite: 2].</li>
-                    <li><span class="time-tag">17:50</span> Parents land safely home at Taipei Taoyuan Airport (T1)[cite: 2]. Trip completed! 🎉</li>
+                    <li><span class="time-tag">07:40</span> 雅文搭乘晨班機返回都柏林[cite: 2]。</li>
+                    <li><span class="time-tag">17:50</span> 爸媽順利抵達台北桃園機場 T1[cite: 2]。旅程圓滿結束！ 🎉</li>
                 </ul>
             </div>
         </div>
@@ -584,16 +621,16 @@ HTML
 </div>
 
 <script>
-    // Function to enable saving edited HTML locally
+    // Save function using local storage
     function savePage() {
         const content = document.getElementById('itinerary-content').innerHTML;
-        localStorage.setItem('savedItinerary_DK_IS', content);
-        alert('Itinerary changes saved locally in your browser! They will reload automatically next time you open this file.');
+        localStorage.setItem('savedItinerary_DK_IS_ZH', content);
+        alert('修改已成功儲存於手機瀏覽器中！');
     }
 
-    // Automatically load saved edits on page load
+    // Load saved content automatically
     window.onload = function() {
-        const savedContent = localStorage.getItem('savedItinerary_DK_IS');
+        const savedContent = localStorage.getItem('savedItinerary_DK_IS_ZH');
         if (savedContent) {
             document.getElementById('itinerary-content').innerHTML = savedContent;
         }
